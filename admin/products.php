@@ -67,7 +67,7 @@ require APP_ROOT . '/includes/admin-header.php';
                         <td class="px-6 py-4 text-zinc-600"><?= h($product['category']) ?></td>
                         <td class="px-6 py-4 font-semibold"><?= money($product['price']) ?></td>
                         <td class="px-6 py-4"><span
-                                class="<?= $product['stock_quantity'] <= 5 ? 'text-amber-700' : 'text-zinc-700' ?> font-semibold"><?= (int) $product['stock_quantity'] ?>
+                                class="<?= h(stock_alert_classes((int) $product['stock_quantity'])['text']) ?> font-semibold"><?= (int) $product['stock_quantity'] ?>
                                 units</span></td>
                         <td class="px-6 py-4"><span
                                 class="badge <?= $product['is_active'] ? 'bg-green-100 text-green-700' : 'bg-zinc-200 text-zinc-600' ?>"><?= $product['is_active'] ? 'Live' : 'Hidden' ?></span>

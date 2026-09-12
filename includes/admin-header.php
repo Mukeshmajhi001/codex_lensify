@@ -1,6 +1,21 @@
 <?php
 require_once APP_ROOT . '/app/bootstrap.php';
 require_admin();
+
+function stock_alert_classes(int $stock): array
+{
+    if ($stock < 30) {
+        return ['text' => 'text-red-700', 'badge' => 'bg-red-100 text-red-800', 'row' => 'border-red-200 bg-red-50/40'];
+    }
+    if ($stock < 40) {
+        return ['text' => 'text-orange-700', 'badge' => 'bg-orange-100 text-orange-800', 'row' => 'border-orange-200 bg-orange-50/40'];
+    }
+    if ($stock < 50) {
+        return ['text' => 'text-yellow-700', 'badge' => 'bg-yellow-100 text-yellow-800', 'row' => 'border-yellow-200 bg-yellow-50/40'];
+    }
+    return ['text' => 'text-zinc-700', 'badge' => 'bg-zinc-100 text-zinc-700', 'row' => 'border-zinc-200 bg-white'];
+}
+
 $adminPage = $adminPage ?? 'overview';
 $pageTitle = $pageTitle ?? 'Admin console';
 $success = flash('success');
