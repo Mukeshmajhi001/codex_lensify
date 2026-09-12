@@ -17,7 +17,7 @@ if (db_available()) {
     $metrics['customers'] = (int) db()->query("SELECT COUNT(*) FROM users WHERE role = 'customer'")->fetchColumn();
     $recentOrders = db()->query('SELECT * FROM orders ORDER BY created_at DESC LIMIT 5')->fetchAll();
     $topProducts = db()->query("SELECT oi.product_name, SUM(oi.quantity) sold, SUM(oi.line_total) revenue FROM order_items oi INNER JOIN orders o ON o.id = oi.order_id WHERE o.payment_status = 'paid' AND o.order_status NOT IN ('cancelled', 'returned') GROUP BY oi.product_id, oi.product_name ORDER BY sold DESC LIMIT 4")->fetchAll();
-    $lowStock = db()->query('SELECT id,name,stock_quantity FROM products WHERE stock_quantity <= 5 ORDER BY stock_quantity ASC LIMIT 4')->fetchAll();
+    $lowStock = db()->query('SELECT id,name,stock_quantity FROM products WHERE stock_quantity < 50 ORDER BY stock_quantity ASC LIMIT 4')->fetchAll();
     $dailyStatement = db()->prepare("SELECT DATE(o.created_at) AS day, COALESCE(SUM(o.total), 0) AS revenue, COUNT(*) AS orders, COALESCE(SUM(item_totals.units), 0) AS units
         FROM orders o LEFT JOIN (SELECT order_id, SUM(quantity) AS units FROM order_items GROUP BY order_id) item_totals ON item_totals.order_id = o.id
         WHERE o.payment_status = 'paid' AND o.order_status NOT IN ('cancelled', 'returned') AND o.created_at >= ? GROUP BY DATE(o.created_at)");
@@ -122,11 +122,11 @@ require APP_ROOT . '/includes/admin-header.php';
         <div class="flex items-center justify-between">
             <h2 class="text-lg font-bold">Inventory alert</h2><a class="text-xs font-bold underline"
                 href="<?= h(url('admin/inventory.php')) ?>">Manage stock</a>
-        </div><?php if ($lowStock): ?><div class="mt-5 space-y-4"><?php foreach ($lowStock as $product): ?><div
-                        class="flex items-center justify-between gap-3">
-                        <div><strong class="block text-sm"><?= h($product['name']) ?></strong><span
-                                class="text-xs text-zinc-500">Low stock item</span></div><span
-                            class="badge bg-amber-100 text-amber-800"><?= (int) $product['stock_quantity'] ?> left</span>
+        </div><?php if ($lowStock): ?><div class="mt-5 space-y-3"><?php foreach ($lowStock as $product): ?><?php $stockClasses = stock_alert_classes((int) $product['stock_quantity']); ?><div
+                        class="flex items-center justify-between gap-3 rounded-xl border px-3 py-3 <?= h($stockClasses['row']) ?>">
+                        <div><strong class="block text-sm <?= h($stockClasses['text']) ?>"><?= h($product['name']) ?></strong><span
+                                class="text-xs <?= h($stockClasses['text']) ?>">Low stock item</span></div><span
+                            class="badge <?= h($stockClasses['badge']) ?>"><?= (int) $product['stock_quantity'] ?> left</span>
                     </div><?php endforeach; ?></div><?php else: ?><div class="mt-10 text-center"><span
                     class="material-symbols-outlined text-4xl text-green-700">verified</span>
                 <p class="mt-3 text-sm text-zinc-500">All frames are comfortably stocked.</p>
