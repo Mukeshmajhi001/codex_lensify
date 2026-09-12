@@ -1,0 +1,26 @@
+Options -Indexes
+DirectoryIndex index.php
+ErrorDocument 404 /codex_lensify/404
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Redirect manually entered .php URLs to their clean equivalents.
+    # THE_REQUEST prevents this rule from interfering with internal rewrites.
+    RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.php(?:[?\s]) [NC]
+    RewriteRule ^index\.php$ ./ [R=301,L,NE]
+    RewriteCond %{THE_REQUEST} \s/+(.+?)\.php(?:[?\s]) [NC]
+    RewriteRule ^(.+)\.php$ $1 [R=301,L,NE]
+
+    # Internally map /shop, /admin/products, etc. to the matching PHP file.
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}.php -f
+    RewriteRule ^(.+?)/?$ $1.php [END]
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
