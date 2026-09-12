@@ -384,9 +384,9 @@ function products(array $filters = []): array
             }
         }
         if (!empty($filters['query'])) {
-            $sql .= ' AND (p.name LIKE ? OR b.name LIKE ? OR p.shape LIKE ?)';
+            $sql .= ' AND (p.name LIKE ? OR b.name LIKE ? OR p.shape LIKE ? OR p.material LIKE ? OR p.color LIKE ? OR p.gender LIKE ? OR c.name LIKE ? OR p.description LIKE ? OR p.short_description LIKE ?)';
             $like = '%' . $filters['query'] . '%';
-            array_push($params, $like, $like, $like);
+            array_push($params, $like, $like, $like, $like, $like, $like, $like, $like, $like);
         }
         $sort = match ($filters['sort'] ?? '') {
             'price_asc' => 'p.price ASC',
@@ -407,7 +407,7 @@ function products(array $filters = []): array
             }
         }
         if (!empty($filters['query'])) {
-            $haystack = strtolower(implode(' ', [$product['name'], $product['brand'], $product['shape']]));
+            $haystack = strtolower(implode(' ', [$product['name'], $product['brand'], $product['category'], $product['shape'], $product['material'], $product['color'], $product['gender'], $product['description']]));
             if (!str_contains($haystack, strtolower($filters['query']))) {
                 return false;
             }
@@ -500,7 +500,7 @@ function approved_reviews(int $productId): array
     }
 
     try {
-        $statement = db()->prepare("SELECT reviewer_name, rating, title, body, created_at FROM reviews WHERE product_id = ? AND status = 'approved' ORDER BY created_at DESC LIMIT 12");
+        $statement = db()->prepare("SELECT reviewer_name, rating, title, body, created_at FROM reviews WHERE product_id = ? AND status <> 'rejected' ORDER BY rating DESC, created_at DESC LIMIT 12");
         $statement->execute([$productId]);
         return $statement->fetchAll();
     } catch (Throwable) {
@@ -514,7 +514,7 @@ function refresh_product_review_summary(int $productId): void
         return;
     }
 
-    $statement = db()->prepare("SELECT COUNT(*) AS review_count, AVG(rating) AS rating FROM reviews WHERE product_id = ? AND status = 'approved'");
+    $statement = db()->prepare("SELECT COUNT(*) AS review_count, AVG(rating) AS rating FROM reviews WHERE product_id = ? AND status <> 'rejected'");
     $statement->execute([$productId]);
     $summary = $statement->fetch();
     db()->prepare('UPDATE products SET review_count = ?, rating = ? WHERE id = ?')->execute([

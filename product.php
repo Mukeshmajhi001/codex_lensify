@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'submi
         if ($duplicate->fetch()) {
             flash('error', 'You have already submitted a review for this frame.');
         } else {
-            db()->prepare('INSERT INTO reviews (product_id, user_id, reviewer_name, rating, title, body, status) VALUES (?, ?, ?, ?, ?, ?, "pending")')->execute([
+            db()->prepare('INSERT INTO reviews (product_id, user_id, reviewer_name, rating, title, body, status) VALUES (?, ?, ?, ?, ?, ?, "approved")')->execute([
                 $product['id'],
                 current_user()['id'],
                 trim(current_user()['first_name'] . ' ' . current_user()['last_name']),
@@ -45,7 +45,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'submi
             ]);
             $reviewerName = trim(current_user()['first_name'] . ' ' . current_user()['last_name']) ?: 'A customer';
             notify_admins('New review received', "{$reviewerName} reviewed {$product['name']} with {$rating} " . ($rating === 1 ? 'star.' : 'stars.'), 'admin/reviews.php');
-            flash('success', 'Thanks! Your review is waiting for approval.');
+            refresh_product_review_summary((int) $product['id']);
+            flash('success', 'Thanks! Your review is now live.');
         }
     }
     redirect($returnTo);
@@ -200,8 +201,8 @@ require APP_ROOT . '/includes/header.php';
                             <?php if ($review['title']): ?><h3 class="mt-3 text-sm font-bold"><?= h($review['title']) ?></h3>
                             <?php endif; ?><p class="mt-2 text-sm leading-6 text-zinc-600"><?= h($review['body']) ?></p><span
                                 class="mt-3 block text-[11px] text-zinc-500"><?= date('d M Y', strtotime($review['created_at'])) ?></span>
-                        </article><?php endforeach; ?></div><?php else: ?><p class="mt-5 text-sm text-zinc-500">No approved
-                    reviews yet. Be the first to share your experience.</p><?php endif; ?>
+                        </article><?php endforeach; ?></div><?php else: ?><p class="mt-5 text-sm text-zinc-500">No
+                        reviews yet. Be the first to share your experience.</p><?php endif; ?>
         </div>
         <aside class="rounded-xl bg-mist p-5 sm:p-6" id="write-review">
             <h2 class="text-lg font-bold">Write a review</h2><?php if (!current_user()): ?><p
@@ -226,8 +227,8 @@ require APP_ROOT . '/includes/header.php';
                             placeholder="Optional headline"></div>
                     <div><label class="label">Your review</label><textarea class="input min-h-28" maxlength="2000"
                             name="body" required placeholder="Tell us about your frame and fit..."></textarea></div><button
-                        class="button button-primary w-full" type="submit">Submit for approval</button>
-                    <p class="text-center text-[11px] text-zinc-500">Reviews are published after moderation.</p>
+                        class="button button-primary w-full" type="submit">Submit review</button>
+                    <p class="text-center text-[11px] text-zinc-500">Your review will appear immediately.</p>
                 </form><?php else: ?><div class="mt-4 rounded-lg border border-zinc-200 bg-white p-4"><span
                         class="material-symbols-outlined text-zinc-500">verified_user</span>
                     <p class="mt-2 text-sm leading-6 text-zinc-600"><?= h($reviewEligibility['reason']) ?></p>

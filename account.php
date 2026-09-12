@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__ . '/app/bootstrap.php';
+require_once __DIR__ . '/app/address-schema.php';
 require_login();
+ensure_address_fields();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'update_profile') {
     if (!verify_csrf()) {
@@ -81,6 +83,8 @@ require APP_ROOT . '/includes/header.php';
                     class="material-symbols-outlined">receipt_long</span>My orders</a>
             <a class="admin-nav" href="<?= h(url('wishlist.php')) ?>"><span
                     class="material-symbols-outlined">favorite</span>Saved frames</a>
+            <a class="admin-nav" href="<?= h(url('delivery-address.php')) ?>"><span
+                    class="material-symbols-outlined">location_on</span>Delivery address</a>
             <?php if (is_admin()): ?><a class="admin-nav" href="<?= h(url('admin/index.php')) ?>"><span
                         class="material-symbols-outlined">admin_panel_settings</span>Admin console</a><?php endif; ?>
             <a class="admin-nav" href="<?= h(url('logout.php')) ?>"><span

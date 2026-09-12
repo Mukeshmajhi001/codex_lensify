@@ -60,7 +60,8 @@ $unreadNotifications = $viewer ? unread_notification_count((int) $viewer['id']) 
     <?php require APP_ROOT . '/includes/loader.php'; ?>
     <div
         class="bg-ink px-4 py-2.5 text-center font-mono text-[10px] uppercase leading-none tracking-[.16em] text-white/90 sm:text-[11px] sm:tracking-[.2em]">
-        Free shipping on orders above ₹2,000</div>
+        <?php $shippingThreshold = free_shipping_threshold(); ?>
+        <?= $shippingThreshold !== null ? 'Free shipping on orders above ₹' . number_format($shippingThreshold, 0) : 'Free shipping available' ?></div>
     <header
         class="sticky top-0 z-40 border-b border-ink/10 bg-paper/80 shadow-hair backdrop-blur-xl backdrop-saturate-150">
         <div
@@ -76,8 +77,12 @@ $unreadNotifications = $viewer ? unread_notification_count((int) $viewer['id']) 
                 <a class="nav-link" href="<?= h(url('shop.php?sort=price_asc')) ?>">Offers</a>
             </nav>
             <div class="flex items-center gap-0.5 sm:gap-1">
-                <a class="icon-button hidden md:inline-flex" href="<?= h(url('shop.php')) ?>" aria-label="Search"><span
-                        class="material-symbols-outlined">search</span></a>
+                <form class="relative hidden w-44 items-center gap-2 rounded-full border border-line bg-white px-3 py-2 md:flex lg:w-56" action="<?= h(url('shop.php')) ?>" method="get" role="search" data-live-search data-search-base="<?= h(url()) ?>" data-search-endpoint="<?= h(url('search-suggestions.php')) ?>">
+                    <label class="sr-only" for="desktop-search">Search frames</label>
+                    <span class="material-symbols-outlined text-[19px] text-zinc-400">search</span>
+                    <input class="min-w-0 flex-1 border-0 bg-transparent p-0 text-xs text-ink placeholder:text-zinc-400 focus:ring-0" id="desktop-search" name="q" placeholder="Search frames..." type="search" value="<?= h($_GET['q'] ?? '') ?>">
+                    <div class="live-search-results" data-live-search-results hidden></div>
+                </form>
                 <a class="profile-nav-button" href="<?= h(url($viewer ? 'account.php' : 'login.php')) ?>"
                     aria-label="<?= $viewer ? 'My profile' : 'Sign in' ?>"><?php if ($viewerAvatar): ?><img
                         class="h-full w-full object-cover" src="<?= h($viewerAvatar) ?>"
@@ -101,7 +106,7 @@ $unreadNotifications = $viewer ? unread_notification_count((int) $viewer['id']) 
         <div class="border-t border-ink/[.07] bg-white px-4 py-2.5 sm:px-6 xl:hidden">
             <form
                 class="mx-auto flex max-w-shell items-center gap-2 rounded-full border border-line bg-mist p-1 pl-3.5 transition duration-200 ease-soft focus-within:border-ink focus-within:bg-white focus-within:shadow-soft"
-                action="<?= h(url('shop.php')) ?>" method="get" role="search">
+                action="<?= h(url('shop.php')) ?>" method="get" role="search" data-live-search data-search-base="<?= h(url()) ?>" data-search-endpoint="<?= h(url('search-suggestions.php')) ?>">
                 <label class="sr-only" for="mobile-search">Search frames</label>
                 <span class="material-symbols-outlined shrink-0 text-[20px] text-zinc-400">search</span>
                 <?php foreach (['category', 'shape', 'material', 'gender', 'sort'] as $searchFilter): ?>
@@ -112,6 +117,7 @@ $unreadNotifications = $viewer ? unread_notification_count((int) $viewer['id']) 
                     class="min-w-0 flex-1 border-0 bg-transparent p-0 text-[13px] text-ink placeholder:text-zinc-400 focus:ring-0 sm:text-sm"
                     id="mobile-search" name="q" placeholder="Search frames, shapes or brands" type="search"
                     value="<?= h($_GET['q'] ?? '') ?>">
+                <div class="live-search-results" data-live-search-results hidden></div>
                 <button
                     class="shrink-0 rounded-full bg-ink px-4 py-2 text-[10px] font-bold uppercase tracking-[.1em] text-white transition duration-200 ease-soft hover:bg-[#232c3b] active:scale-95 sm:text-[11px]"
                     type="submit">Search</button>

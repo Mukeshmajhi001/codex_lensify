@@ -82,16 +82,14 @@ require APP_ROOT . '/includes/header.php';
             </div><a class="text-xs font-bold underline underline-offset-4" href="<?= h(url('shop.php')) ?>">View
                 all</a>
         </div>
-        <?php
-        $categories = categories();
-        array_pop($categories);
-        ?>
+        <?php $categories = categories(); ?>
 
-        <div class="grid grid-cols-2 gap-3 md:grid-cols-4 lg:gap-6">
-            <?php foreach ($categories as $name => $category): ?>
+        <div class="home-category-grid grid grid-cols-2 gap-3 md:grid-cols-4 lg:gap-6" id="home-category-grid">
+            <?php foreach ($categories as $categoryIndex => $category): ?>
+            <?php $name = $categoryIndex; ?>
             <?php $icon = $categoryIcons[$name] ?? ($category['icon'] ?: 'visibility'); ?>
 
-            <a class="category-card" href="<?= h(url('shop.php?category=' . rawurlencode($name))) ?>">
+            <a class="category-card <?= array_search($name, array_keys($categories), true) >= 6 ? 'home-category-extra-mobile' : '' ?> <?= array_search($name, array_keys($categories), true) >= 8 ? 'home-category-extra-desktop' : '' ?>" href="<?= h(url('shop.php?category=' . rawurlencode($name))) ?>">
                 <span class="category-card-icon material-symbols-outlined"><?= h($icon) ?></span>
 
                 <strong class="mt-3 block text-sm"><?= h($name) ?></strong>
@@ -102,6 +100,9 @@ require APP_ROOT . '/includes/header.php';
             </a>
             <?php endforeach; ?>
         </div>
+        <?php if (count($categories) > 6): ?><button class="mt-6 block text-xs font-bold underline underline-offset-4" type="button"
+            data-expand-toggle data-expand-target="#home-category-grid" data-expand-more="See more categories"
+            aria-controls="home-category-grid" aria-expanded="false">See more categories</button><?php endif; ?>
     </div>
 </section>
 
@@ -149,7 +150,7 @@ require APP_ROOT . '/includes/header.php';
     <div class="mx-auto grid max-w-[1440px] gap-6 px-5 py-8 sm:grid-cols-2 lg:grid-cols-4 lg:px-10">
         <div class="flex gap-3"><span class="material-symbols-outlined text-green-700">local_shipping</span>
             <div><strong class="text-base">Free shipping</strong>
-                <p class="mt-1 text-[13px] text-zinc-500">On all orders above ₹2,000.</p>
+                <p class="mt-1 text-[13px] text-zinc-500">On all orders above ₹<?= h(number_format(free_shipping_threshold() ?? 0, 0)) ?>.</p>
             </div>
         </div>
         <div class="flex gap-3"><span class="material-symbols-outlined text-green-700">replay</span>

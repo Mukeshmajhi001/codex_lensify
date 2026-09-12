@@ -1,7 +1,9 @@
 <?php
 require_once __DIR__ . '/app/bootstrap.php';
+require_once __DIR__ . '/app/address-schema.php';
 handle_store_actions();
 require_login();
+ensure_address_fields();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'place_order') {
     if (!verify_csrf()) {
@@ -16,7 +18,42 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'place
     $phone = trim((string) ($_POST['phone'] ?? ''));
     $address = trim((string) ($_POST['address'] ?? ''));
     $city = trim((string) ($_POST['city'] ?? ''));
+    $state = trim((string) ($_POST['state'] ?? ''));
     $postalCode = trim((string) ($_POST['postal_code'] ?? ''));
+    $district = trim((string) ($_POST['district'] ?? ''));
+    $municipality = trim((string) ($_POST['municipality'] ?? ''));
+    $wardNumber = trim((string) ($_POST['ward_number'] ?? ''));
+    $toleLocality = trim((string) ($_POST['tole_locality'] ?? ''));
+    $streetChowk = trim((string) ($_POST['street_chowk'] ?? ''));
+    $houseNumber = trim((string) ($_POST['house_number'] ?? ''));
+    $nearbyLandmark = trim((string) ($_POST['nearby_landmark'] ?? ''));
+    $selectedAddressId = (int) ($_POST['address_id'] ?? 0);
+    $savedAddressError = false;
+    if ($selectedAddressId > 0) {
+        $addressStatement = db()->prepare('SELECT recipient_name, phone, line1, line2, city, state, district, municipality, ward_number, tole_locality, street_chowk, house_number, nearby_landmark, postal_code, country FROM addresses WHERE id = ? AND user_id = ? LIMIT 1');
+        $addressStatement->execute([$selectedAddressId, (int) current_user()['id']]);
+        $savedAddress = $addressStatement->fetch();
+        if (!$savedAddress) {
+            flash('error', 'Please choose a valid saved delivery address.');
+            $savedAddressError = true;
+        } else {
+            $recipientParts = preg_split('/\s+/', trim((string) $savedAddress['recipient_name']), 2) ?: [];
+            $firstName = $recipientParts[0] ?? $firstName;
+            $lastName = $recipientParts[1] ?? '';
+            $phone = trim((string) $savedAddress['phone']);
+            $address = trim((string) $savedAddress['line1'] . ($savedAddress['line2'] ? ', ' . $savedAddress['line2'] : ''));
+            $city = trim((string) $savedAddress['city'] . ', ' . (string) $savedAddress['state']);
+            $state = trim((string) $savedAddress['state']);
+            $district = trim((string) $savedAddress['district']);
+            $municipality = trim((string) $savedAddress['municipality']);
+            $wardNumber = trim((string) $savedAddress['ward_number']);
+            $toleLocality = trim((string) $savedAddress['tole_locality']);
+            $streetChowk = trim((string) $savedAddress['street_chowk']);
+            $houseNumber = trim((string) $savedAddress['house_number']);
+            $nearbyLandmark = trim((string) $savedAddress['nearby_landmark']);
+            $postalCode = trim((string) $savedAddress['postal_code']);
+        }
+    }
     $customerMessage = mb_substr(trim((string) ($_POST['customer_message'] ?? '')), 0, 1000);
     $paymentMethod = in_array($_POST['payment_method'] ?? '', ['cod', 'upi', 'card'], true) ? $_POST['payment_method'] : 'cod';
 
@@ -26,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'place
     }
     if ($paymentMethod !== 'cod') {
         flash('error', 'UPI, wallets and cards are not available yet. Please choose Cash on delivery.');
-    } elseif (!$firstName || !$lastName || !$email || !$phone || !$address || !$city || !$postalCode) {
+    } elseif ($savedAddressError || !$firstName || !$lastName || !$email || !$phone || !$state || !$district || !$municipality || !$wardNumber || !$toleLocality || !$nearbyLandmark || !$city) {
         flash('error', 'Please complete all delivery details.');
     } elseif (!db_available()) {
         flash('error', 'Database is not ready. Import database/final.sql, then place your order.');
@@ -37,7 +74,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'place
         $shipping = cart_shipping();
         $total = cart_total();
         $orderNumber = 'LNS-' . date('ymd') . '-' . strtoupper(bin2hex(random_bytes(3)));
-        $deliveryAddress = implode("\n", [trim($firstName . ' ' . $lastName), $address, trim($city . ', ' . $postalCode), 'Nepal', 'Phone: ' . $phone]);
+        $deliveryAddress = implode("\n", array_filter([
+            trim($firstName . ' ' . $lastName),
+            'Mobile: ' . $phone,
+            'Province: ' . $state,
+            'District: ' . $district,
+            'Municipality / Rural Municipality: ' . $municipality,
+            'Ward: ' . $wardNumber,
+            'Tole / Locality: ' . $toleLocality,
+            'Street / Chowk: ' . ($streetChowk ?: 'N/A'),
+            'House Number: ' . ($houseNumber ?: 'N/A'),
+            'Nearby Landmark: ' . $nearbyLandmark,
+            'City: ' . $city,
+            $postalCode ? 'Postal Code: ' . $postalCode : null,
+            'Nepal',
+        ], static fn ($line) => $line !== null && $line !== ''));
         try {
             db()->beginTransaction();
             $statement = db()->prepare('INSERT INTO orders (order_number, user_id, customer_name, customer_email, customer_phone, delivery_address, customer_message, subtotal, shipping_amount, discount_amount, total, payment_method, payment_status, order_status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
@@ -101,6 +152,13 @@ if (!$items) {
     redirect('cart.php');
 }
 $user = current_user();
+$nepalProvinces = ['Koshi', 'Madhesh', 'Bagmati', 'Gandaki', 'Lumbini', 'Karnali', 'Sudurpashchim'];
+$savedAddresses = [];
+if (db_available()) {
+    $addressStatement = db()->prepare('SELECT id, label, recipient_name, phone, line1, line2, city, state, district, municipality, ward_number, tole_locality, street_chowk, house_number, nearby_landmark, postal_code, country, is_default FROM addresses WHERE user_id = ? ORDER BY is_default DESC, created_at DESC');
+    $addressStatement->execute([(int) $user['id']]);
+    $savedAddresses = $addressStatement->fetchAll();
+}
 $coupon = active_coupon();
 $pageTitle = 'Checkout';
 require APP_ROOT . '/includes/header.php';
@@ -133,14 +191,13 @@ require APP_ROOT . '/includes/header.php';
             </section>
             <section class="rounded-xl border border-zinc-200 bg-white p-5 sm:p-7">
                 <h2 class="text-xl font-bold">Delivery address</h2>
-                <div class="mt-5"><label class="label">Address</label><input class="input" name="address" required
-                        placeholder="House no., street, area"></div>
-                <div class="mt-4 grid gap-4 sm:grid-cols-2">
-                    <div><label class="label">City</label><input class="input" name="city" required
-                            placeholder="Kathmandu"></div>
-                    <div><label class="label">Postal code</label><input class="input" name="postal_code" required
-                            placeholder="44600"></div>
-                </div>
+                <?php if ($savedAddresses): ?><div class="mt-5"><label class="label">Use a saved address</label><select class="input" data-address-select name="address_id"><option value="0">Enter a different address</option><?php foreach ($savedAddresses as $savedAddress): ?><option value="<?= (int) $savedAddress['id'] ?>" <?= $savedAddress['is_default'] ? 'selected' : '' ?> data-recipient="<?= h($savedAddress['recipient_name']) ?>" data-phone="<?= h($savedAddress['phone']) ?>" data-line1="<?= h($savedAddress['line1']) ?>" data-line2="<?= h($savedAddress['line2'] ?? '') ?>" data-city="<?= h($savedAddress['city']) ?>" data-state="<?= h($savedAddress['state']) ?>" data-district="<?= h($savedAddress['district'] ?? '') ?>" data-municipality="<?= h($savedAddress['municipality'] ?? '') ?>" data-ward="<?= h($savedAddress['ward_number'] ?? '') ?>" data-tole="<?= h($savedAddress['tole_locality'] ?? '') ?>" data-street="<?= h($savedAddress['street_chowk'] ?? '') ?>" data-house="<?= h($savedAddress['house_number'] ?? '') ?>" data-landmark="<?= h($savedAddress['nearby_landmark'] ?? '') ?>" data-postal="<?= h($savedAddress['postal_code']) ?>"><?= h($savedAddress['label']) ?> · <?= h($savedAddress['city']) ?><?= $savedAddress['is_default'] ? ' · Default' : '' ?></option><?php endforeach; ?></select><p class="mt-2 text-xs text-zinc-500">Saved addresses are private to your account.</p></div><?php else: ?><p class="mt-3 text-sm text-zinc-500">Save an address in your <a class="font-bold underline" href="<?= h(url('delivery-address.php')) ?>">Delivery address</a>.</p><?php endif; ?>
+                <div class="mt-4 grid gap-4 sm:grid-cols-2"><div><label class="label">Province <span class="text-red-600">*</span></label><select class="input" name="state" required><option value="">Select province</option><?php foreach ($nepalProvinces as $province): ?><option value="<?= h($province) ?>"><?= h($province) ?></option><?php endforeach; ?></select></div><div><label class="label">District <span class="text-red-600">*</span></label><input class="input" name="district" required placeholder="Kathmandu"></div></div>
+                <div class="mt-4"><label class="label">Municipality / Rural Municipality <span class="text-red-600">*</span></label><input class="input" name="municipality" required placeholder="Kathmandu Metropolitan City / Rural Municipality"></div>
+                <div class="mt-4 grid gap-4 sm:grid-cols-2"><div><label class="label">Ward number</label><input class="input" name="ward_number" required placeholder="10"></div><div><label class="label">Tole / Locality</label><input class="input" name="tole_locality" required placeholder="Baneshwor Tole"></div></div>
+                <div class="mt-4 grid gap-4 sm:grid-cols-2"><div><label class="label">Street / Chowk</label><input class="input" name="street_chowk" placeholder="New Baneshwor Chowk"></div><div><label class="label">House number</label><input class="input" name="house_number" placeholder="House 12, 3rd floor"></div></div>
+                <div class="mt-4"><label class="label">Nearby landmark</label><input class="input" name="nearby_landmark" required placeholder="Near Bhatbhateni, opposite school"></div>
+                <div class="mt-4 grid gap-4 sm:grid-cols-2"><div><label class="label">City</label><input class="input" name="city" required placeholder="Kathmandu"></div><div><label class="label">Postal code <span class="font-normal text-zinc-500">(optional)</span></label><input class="input" name="postal_code" placeholder="44600"></div></div>
                 <p class="mt-4 text-xs text-zinc-500">We currently deliver throughout Nepal.</p>
             </section>
             <section class="rounded-xl border border-zinc-200 bg-white p-5 sm:p-7">

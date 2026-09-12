@@ -174,3 +174,112 @@ document.querySelectorAll("[data-payment-modal-close]").forEach((button) => {
 unavailablePaymentModal?.addEventListener("click", (event) => {
   if (event.target === unavailablePaymentModal) hideUnavailablePayment();
 });
+
+document.querySelectorAll("[data-expand-toggle]").forEach((toggle) => {
+  const target = document.querySelector(toggle.dataset.expandTarget || "");
+  if (!target) return;
+  const moreLabel = toggle.dataset.expandMore || "See more";
+  const lessLabel = toggle.dataset.expandLess || "See less";
+  toggle.addEventListener("click", () => {
+    const expanded = target.classList.toggle("is-expanded");
+    toggle.setAttribute("aria-expanded", String(expanded));
+    toggle.textContent = expanded ? lessLabel : moreLabel;
+  });
+});
+
+document.querySelectorAll("[data-live-search]").forEach((form) => {
+  const input = form.querySelector('input[name="q"]');
+  const resultsBox = form.querySelector("[data-live-search-results]");
+  const endpoint = form.dataset.searchEndpoint;
+  if (!input || !resultsBox || !endpoint) return;
+
+  let timer;
+  let controller;
+  const hideResults = () => {
+    resultsBox.hidden = true;
+    resultsBox.replaceChildren();
+  };
+  const showResults = (results) => {
+    resultsBox.replaceChildren();
+    if (!results.length) {
+      const empty = document.createElement("p");
+      empty.className = "px-4 py-3 text-xs text-zinc-500";
+      empty.textContent = "No matching frames found.";
+      resultsBox.append(empty);
+      resultsBox.hidden = false;
+      return;
+    }
+    results.forEach((result) => {
+      const link = document.createElement("a");
+      link.className = "block border-b border-zinc-100 px-4 py-3 last:border-0 hover:bg-zinc-50";
+      link.href = `${form.dataset.searchBase || ""}product?slug=${encodeURIComponent(result.slug)}`;
+      const name = document.createElement("strong");
+      name.className = "block truncate text-xs text-ink";
+      name.textContent = result.name;
+      const meta = document.createElement("span");
+      meta.className = "mt-1 block truncate text-[11px] text-zinc-500";
+      meta.textContent = [result.brand, result.price].filter(Boolean).join(" · ");
+      link.append(name, meta);
+      resultsBox.append(link);
+    });
+    resultsBox.hidden = false;
+  };
+
+  input.addEventListener("input", () => {
+    window.clearTimeout(timer);
+    controller?.abort();
+    const query = input.value.trim();
+    if (query.length < 2) {
+      hideResults();
+      return;
+    }
+    timer = window.setTimeout(async () => {
+      controller = new AbortController();
+      try {
+        const response = await fetch(`${endpoint}?q=${encodeURIComponent(query)}`, {
+          headers: { Accept: "application/json" },
+          signal: controller.signal,
+        });
+        if (!response.ok) throw new Error("Search request failed");
+        showResults((await response.json()).results || []);
+      } catch (error) {
+        if (error.name !== "AbortError") hideResults();
+      }
+    }, 180);
+  });
+  input.addEventListener("focus", () => {
+    if (input.value.trim().length >= 2) input.dispatchEvent(new Event("input"));
+  });
+  document.addEventListener("click", (event) => {
+    if (!form.contains(event.target)) hideResults();
+  });
+});
+
+document.querySelectorAll("[data-address-select]").forEach((select) => {
+  const form = select.closest("form");
+  const setValue = (name, value) => {
+    const field = form?.querySelector(`[name="${name}"]`);
+    if (field) field.value = value || "";
+  };
+  const fillAddress = () => {
+    const option = select.selectedOptions[0];
+    if (!option || option.value === "0") return;
+    const nameParts = (option.dataset.recipient || "").trim().split(/\s+/, 2);
+    setValue("first_name", nameParts[0] || "");
+    setValue("last_name", nameParts[1] || "");
+    setValue("phone", option.dataset.phone);
+    setValue("address", [option.dataset.line1, option.dataset.line2].filter(Boolean).join(", "));
+    setValue("city", option.dataset.city);
+    setValue("state", option.dataset.state);
+    setValue("district", option.dataset.district);
+    setValue("municipality", option.dataset.municipality);
+    setValue("ward_number", option.dataset.ward);
+    setValue("tole_locality", option.dataset.tole);
+    setValue("street_chowk", option.dataset.street);
+    setValue("house_number", option.dataset.house);
+    setValue("nearby_landmark", option.dataset.landmark);
+    setValue("postal_code", option.dataset.postal);
+  };
+  select.addEventListener("change", fillAddress);
+  if (select.value !== "0") fillAddress();
+});

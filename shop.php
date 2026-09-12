@@ -50,15 +50,21 @@ $options = ['shape' => ['Rectangular', 'Round', 'Aviator', 'Cat Eye', 'Square'],
                 </div>
                 <div><label class="label">Category</label>
                     <div class="space-y-3">
-                        <?php foreach (array_keys(categories()) as $category): ?>
+                        <?php $availableCategories = array_keys(categories()); ?>
+                        <div class="category-filter-list" id="category-filter-list">
+                        <?php foreach ($availableCategories as $categoryIndex => $category): ?>
                             <?php $categoryId = 'filter-category-' . slugify($category); ?>
-                            <div class="flex items-center gap-2 text-sm">
+                            <div class="flex items-center gap-2 text-sm <?= $categoryIndex >= 6 ? 'category-filter-extra-mobile' : '' ?> <?= $categoryIndex >= 8 ? 'category-filter-extra-desktop' : '' ?>">
                                 <input class="rounded border-zinc-300 text-black focus:ring-black" type="radio"
                                     id="<?= h($categoryId) ?>" name="category" value="<?= h($category) ?>"
                                     <?= ($filters['category'] ?? '') === $category ? 'checked' : '' ?>>
                                 <label class="cursor-pointer" for="<?= h($categoryId) ?>"><?= h($category) ?></label>
                             </div>
                         <?php endforeach; ?>
+                        </div>
+                        <?php if (count($availableCategories) > 6): ?><button class="mt-3 text-xs font-bold underline underline-offset-4" type="button"
+                            data-expand-toggle data-expand-target="#category-filter-list" data-expand-more="See more categories"
+                            aria-controls="category-filter-list" aria-expanded="false">See more categories</button><?php endif; ?>
                     </div>
                 </div><?php foreach ($options as $name => $values): ?><div><label class="label"><?= h($name) ?></label>
                         <div class="space-y-3"><?php foreach ($values as $value): ?><label

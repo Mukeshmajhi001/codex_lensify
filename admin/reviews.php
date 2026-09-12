@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     redirect('admin/reviews.php');
 }
 
-$reviews = db()->query('SELECT r.*, p.name AS product_name FROM reviews r JOIN products p ON p.id = r.product_id ORDER BY FIELD(r.status, "pending", "approved", "rejected"), r.created_at DESC')->fetchAll();
+$reviews = db()->query('SELECT r.*, p.name AS product_name, u.first_name, u.last_name, u.email, u.profile_image FROM reviews r JOIN products p ON p.id = r.product_id LEFT JOIN users u ON u.id = r.user_id ORDER BY FIELD(r.status, "pending", "approved", "rejected"), r.rating DESC, r.created_at DESC')->fetchAll();
 $adminPage = 'reviews';
 $pageTitle = 'Reviews';
 require APP_ROOT . '/includes/admin-header.php';
@@ -39,19 +39,19 @@ require APP_ROOT . '/includes/admin-header.php';
 <div>
     <p class="label">Growth</p>
     <h1 class="text-3xl font-bold tracking-[-.05em]">Reviews</h1>
-    <p class="mt-2 text-sm text-zinc-500">Moderate feedback before it appears on the storefront.</p>
+    <p class="mt-2 text-sm text-zinc-500">Review customer feedback, linked to the customer profile.</p>
 </div>
 <section class="mt-8 space-y-4">
     <?php foreach ($reviews as $review): ?>
         <article class="rounded-2xl border border-zinc-300 bg-white p-5 sm:p-6">
             <div class="flex flex-col gap-4 sm:flex-row sm:justify-between">
                 <div>
-                    <div class="flex flex-wrap items-center gap-2"><strong><?= h($review['reviewer_name']) ?></strong><span
+                    <div class="flex flex-wrap items-center gap-2"><strong><?= h($review['reviewer_name']) ?></strong><?php if (!empty($review['user_id'])): ?><a class="text-xs font-bold underline" href="<?= h(url('admin/customer.php?id=' . (int) $review['user_id'])) ?>">View profile</a><?php endif; ?><span
                             class="text-amber-600"><?= str_repeat('★', (int) $review['rating']) ?></span><span
                             class="badge <?= $review['status'] === 'approved' ? 'bg-green-100 text-green-700' : ($review['status'] === 'rejected' ? 'bg-red-100 text-red-700' : 'bg-amber-100 text-amber-700') ?>"><?= h($review['status']) ?></span>
                     </div>
                     <p class="mt-1 text-xs text-zinc-500"><?= h($review['product_name']) ?> ·
-                        <?= date('d M Y', strtotime($review['created_at'])) ?></p>
+                        <?= date('d M Y', strtotime($review['created_at'])) ?><?php if (!empty($review['email'])): ?> · <?= h($review['email']) ?><?php endif; ?></p>
                 </div>
                 <div class="flex gap-2">
                     <form method="post"><?= csrf_field() ?><input type="hidden" name="action" value="review_status"><input
