@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'adjus
     }
     redirect('admin/inventory.php');
 }
-$products = db()->query('SELECT id,name,sku,stock_quantity FROM products ORDER BY name')->fetchAll();
+$products = db()->query('SELECT id,name,sku,stock_quantity FROM products ORDER BY stock_quantity ASC, name ASC')->fetchAll();
 $perPage = 10;
 $page = max(1, (int) ($_GET['page'] ?? 1));
 $totalHistory = (int) db()->query('SELECT COUNT(*) FROM stock_history')->fetchColumn();
@@ -98,14 +98,20 @@ require APP_ROOT . '/includes/admin-header.php';
     </section>
     <aside class="h-fit rounded-2xl border border-zinc-300 bg-white p-6">
         <h2 class="font-bold">Adjust stock</h2>
-        <form class="mt-5 space-y-4" method="post"><?= csrf_field() ?><input type="hidden" name="action"
+        <form class="mt-5 space-y-4" method="post" data-stock-form><?= csrf_field() ?><input type="hidden" name="action"
                 value="adjust_stock">
-            <div><label class="label">Product</label><select class="input" name="product_id" required>
-                    <option value="">Choose product</option><?php foreach ($products as $product): ?><option
-                        value="<?= $product['id'] ?>"><?= h($product['name']) ?> (<?= $product['stock_quantity'] ?>)
-                    </option>
-                    <?php endforeach; ?>
-                </select></div>
+            <div class="relative"><label class="label" for="stock-product-search">Choose product</label><input
+                    class="input" id="stock-product-search" placeholder="Choose product or search..." type="search"
+                    autocomplete="off" role="combobox" aria-autocomplete="list" aria-controls="stock-product-options"
+                    aria-expanded="false" data-stock-product-search><input type="hidden" name="product_id"
+                    data-stock-product-value>
+                <div class="absolute inset-x-0 top-full z-20 mt-1 hidden max-h-72 overflow-y-auto rounded-xl border border-zinc-300 bg-white py-1 shadow-lg"
+                    id="stock-product-options" role="listbox" data-stock-product-options><?php foreach ($products as $product): ?><button
+                        class="block w-full px-3 py-2 text-left text-sm hover:bg-zinc-100" type="button" role="option"
+                        data-product-id="<?= (int) $product['id'] ?>" data-search-text="<?= h($product['name'] . ' ' . $product['sku']) ?>">
+                        <?= h($product['name']) ?> (<?= (int) $product['stock_quantity'] ?>)
+                    </button><?php endforeach; ?></div>
+            </div>
             <div><label class="label">Quantity change</label><input class="input" name="quantity_change" required
                     placeholder="e.g. 12 or -2" type="number"></div>
             <div><label class="label">Note</label><textarea class="input min-h-20" name="note"
@@ -114,4 +120,45 @@ require APP_ROOT . '/includes/admin-header.php';
         </form>
     </aside>
 </div>
+<script>
+    (() => {
+        const search = document.querySelector('[data-stock-product-search]');
+        const value = document.querySelector('[data-stock-product-value]');
+        const options = document.querySelector('[data-stock-product-options]');
+        const form = document.querySelector('[data-stock-form]');
+        if (!search || !value || !options || !form) return;
+
+        const productOptions = Array.from(options.querySelectorAll('[data-product-id]'));
+        const toggleOptions = (open) => {
+            options.classList.toggle('hidden', !open);
+            search.setAttribute('aria-expanded', open ? 'true' : 'false');
+        };
+
+        search.addEventListener('input', () => {
+            const query = search.value.trim().toLowerCase();
+            value.value = '';
+            productOptions.forEach((option) => {
+                option.classList.toggle('hidden', query !== '' && !option.dataset.searchText.toLowerCase().includes(query));
+            });
+            toggleOptions(true);
+        });
+
+        search.addEventListener('focus', () => toggleOptions(true));
+        productOptions.forEach((option) => option.addEventListener('click', () => {
+            search.value = option.textContent.trim();
+            value.value = option.dataset.productId;
+            toggleOptions(false);
+        }));
+        document.addEventListener('click', (event) => {
+            if (!event.target.closest('[data-stock-form]')) toggleOptions(false);
+        });
+        form.addEventListener('submit', (event) => {
+            if (!value.value) {
+                event.preventDefault();
+                search.focus();
+                toggleOptions(true);
+            }
+        });
+    })();
+</script>
 <?php require APP_ROOT . '/includes/admin-footer.php'; ?>

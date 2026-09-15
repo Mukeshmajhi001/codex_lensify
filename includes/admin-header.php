@@ -24,8 +24,10 @@ $admin = current_user();
 $adminAvatar = avatar_url($admin);
 $adminUnreadNotifications = unread_notification_count((int) $admin['id']);
 $adminActivityCounts = [
-    'orders' => unread_notification_count_by_title('New order received', (int) $admin['id']),
-    'reviews' => unread_notification_count_by_title('New review received', (int) $admin['id']),
+    'orders' => unread_notification_count_by_paths(['admin/order.php'], (int) $admin['id']),
+    'returns' => unread_notification_count_by_paths(['admin/returns.php'], (int) $admin['id']),
+    'reviews' => unread_notification_count_by_paths(['admin/reviews.php'], (int) $admin['id']),
+    'messages' => unread_notification_count_by_paths(['admin/messages.php'], (int) $admin['id']),
 ];
 $adminSections = [
     'Store' => [

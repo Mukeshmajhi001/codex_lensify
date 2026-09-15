@@ -765,6 +765,39 @@ function unread_notification_count_by_title(string $title, ?int $userId = null):
     }
 }
 
+function unread_notification_count_by_paths(array $paths, ?int $userId = null): int
+{
+    $userId ??= (int) (current_user()['id'] ?? 0);
+    if ($userId <= 0 || !db_available() || !$paths) {
+        return 0;
+    }
+    try {
+        $conditions = implode(' OR ', array_fill(0, count($paths), 'link_url LIKE ?'));
+        $statement = db()->prepare("SELECT COUNT(*) FROM notifications WHERE user_id = ? AND is_read = 0 AND ({$conditions})");
+        $parameters = [$userId];
+        foreach ($paths as $path) {
+            $parameters[] = rtrim((string) $path, '%') . '%';
+        }
+        $statement->execute($parameters);
+        return (int) $statement->fetchColumn();
+    } catch (Throwable) {
+        return 0;
+    }
+}
+
+function mark_notifications_read_for_target(string $target, ?int $userId = null): void
+{
+    $userId ??= (int) (current_user()['id'] ?? 0);
+    if ($userId <= 0 || !db_available() || $target === '') {
+        return;
+    }
+    try {
+        db()->prepare('UPDATE notifications SET is_read = 1 WHERE user_id = ? AND link_url = ? AND is_read = 0')->execute([$userId, $target]);
+    } catch (Throwable) {
+        // Notifications are optional and must never break an admin page.
+    }
+}
+
 function wishlist_ids(): array
 {
     if (current_user() && db_available()) {

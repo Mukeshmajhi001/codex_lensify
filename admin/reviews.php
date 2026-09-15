@@ -9,6 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     $action = $_POST['action'] ?? '';
     $id = (int) ($_POST['id'] ?? 0);
+    mark_notifications_read_for_target('admin/reviews.php?id=' . $id);
     $reviewLookup = db()->prepare('SELECT product_id FROM reviews WHERE id = ?');
     $reviewLookup->execute([$id]);
     $productId = (int) $reviewLookup->fetchColumn();
@@ -32,6 +33,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 $reviews = db()->query('SELECT r.*, p.name AS product_name, u.first_name, u.last_name, u.email, u.profile_image FROM reviews r JOIN products p ON p.id = r.product_id LEFT JOIN users u ON u.id = r.user_id ORDER BY FIELD(r.status, "pending", "approved", "rejected"), r.rating DESC, r.created_at DESC')->fetchAll();
+$openedReviewId = (int) ($_GET['id'] ?? 0);
+if ($openedReviewId > 0) {
+    mark_notifications_read_for_target('admin/reviews.php?id=' . $openedReviewId);
+}
 $adminPage = 'reviews';
 $pageTitle = 'Reviews';
 require APP_ROOT . '/includes/admin-header.php';
@@ -54,7 +59,7 @@ require APP_ROOT . '/includes/admin-header.php';
                         class="text-amber-600"><?= str_repeat('★', (int) $review['rating']) ?></span><span
                         class="badge <?= $review['status'] === 'approved' ? 'bg-green-100 text-green-700' : ($review['status'] === 'rejected' ? 'bg-red-100 text-red-700' : 'bg-amber-100 text-amber-700') ?>"><?= h($review['status']) ?></span>
                 </div>
-                <p class="mt-1 text-xs text-zinc-500"><?= h($review['product_name']) ?> ·
+                    <p class="mt-1 text-xs text-zinc-500"><a class="underline underline-offset-2" href="<?= h(url('admin/reviews.php?id=' . (int) $review['id'])) ?>">Open review</a> · <?= h($review['product_name']) ?> ·
                     <?= date('d M Y', strtotime($review['created_at'])) ?><?php if (!empty($review['email'])): ?> ·
                     <?= h($review['email']) ?><?php endif; ?></p>
             </div>

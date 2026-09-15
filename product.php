@@ -44,7 +44,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'submi
                 $body,
             ]);
             $reviewerName = trim(current_user()['first_name'] . ' ' . current_user()['last_name']) ?: 'A customer';
-            notify_admins('New review received', "{$reviewerName} reviewed {$product['name']} with {$rating} " . ($rating === 1 ? 'star.' : 'stars.'), 'admin/reviews.php');
+            $reviewId = (int) db()->lastInsertId();
+            notify_admins('New review received', "{$reviewerName} reviewed {$product['name']} with {$rating} " . ($rating === 1 ? 'star.' : 'stars.'), 'admin/reviews.php?id=' . $reviewId);
             refresh_product_review_summary((int) $product['id']);
             flash('success', 'Thanks! Your review is now live.');
         }
@@ -76,32 +77,32 @@ require APP_ROOT . '/includes/header.php';
                     id="product-gallery-main" src="<?= h(display_image_url($galleryImages[0]['image_url'] ?? null)) ?>"
                     alt="<?= h($galleryImages[0]['alt_text'] ?: $product['name']) ?>">
                 <?php if (count($galleryImages) > 1): ?><button
-                        class="absolute left-3 top-1/2 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full border border-zinc-200 bg-white/95 text-ink shadow-soft transition hover:bg-white focus:outline-none focus:ring-2 focus:ring-ink/30"
-                        type="button" data-gallery-prev aria-label="Show previous product image">
+                    class="absolute left-3 top-1/2 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full border border-zinc-200 bg-white/95 text-ink shadow-soft transition hover:bg-white focus:outline-none focus:ring-2 focus:ring-ink/30"
+                    type="button" data-gallery-prev aria-label="Show previous product image">
                         <svg aria-hidden="true" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m14.5 5-7 7 7 7" />
-                        </svg>
-                    </button><button
-                        class="absolute right-3 top-1/2 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full border border-zinc-200 bg-white/95 text-ink shadow-soft transition hover:bg-white focus:outline-none focus:ring-2 focus:ring-ink/30"
-                        type="button" data-gallery-next aria-label="Show next product image">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m14.5 5-7 7 7 7" />
+                    </svg>
+                </button><button
+                    class="absolute right-3 top-1/2 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full border border-zinc-200 bg-white/95 text-ink shadow-soft transition hover:bg-white focus:outline-none focus:ring-2 focus:ring-ink/30"
+                    type="button" data-gallery-next aria-label="Show next product image">
                         <svg aria-hidden="true" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m9.5 5 7 7-7 7" />
-                        </svg>
-                    </button><?php endif; ?>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m9.5 5 7 7-7 7" />
+                    </svg>
+                </button><?php endif; ?>
             </div>
             <?php if (count($galleryImages) > 1): ?><div class="mt-3 grid grid-cols-4 gap-3 sm:grid-cols-5 lg:grid-cols-6">
-                    <?php foreach ($galleryImages as $index => $image): ?><button
-                            class="product-gallery-thumb aspect-square overflow-hidden rounded-lg border bg-white <?= $index === 0 ? 'border-2 border-black' : 'border-zinc-200' ?>"
-                            type="button" data-gallery-image="<?= h(display_image_url($image['image_url'] ?? null)) ?>"
-                            data-gallery-alt="<?= h($image['alt_text'] ?: $product['name']) ?>"
-                            data-gallery-index="<?= $index ?>" aria-label="View image <?= $index + 1 ?>"><img
-                                class="h-full w-full object-contain p-1 <?= $index === 0 ? '' : 'opacity-70' ?>"
-                                src="<?= h(display_image_url($image['image_url'] ?? null)) ?>"
-                                alt=""></button><?php endforeach; ?></div><?php endif; ?>
+                <?php foreach ($galleryImages as $index => $image): ?><button
+                    class="product-gallery-thumb aspect-square overflow-hidden rounded-lg border bg-white <?= $index === 0 ? 'border-2 border-black' : 'border-zinc-200' ?>"
+                    type="button" data-gallery-image="<?= h(display_image_url($image['image_url'] ?? null)) ?>"
+                    data-gallery-alt="<?= h($image['alt_text'] ?: $product['name']) ?>"
+                    data-gallery-index="<?= $index ?>" aria-label="View image <?= $index + 1 ?>"><img
+                        class="h-full w-full object-contain p-1 <?= $index === 0 ? '' : 'opacity-70' ?>"
+                        src="<?= h(display_image_url($image['image_url'] ?? null)) ?>"
+                        alt=""></button><?php endforeach; ?></div><?php endif; ?>
         </div>
         <div class="lg:pt-3">
             <div class="flex gap-2"><?php if ($product['badge']): ?><span
-                        class="badge <?= $product['badge'] === 'SALE' ? 'bg-green-600 text-white' : 'bg-black text-white' ?>"><?= h($product['badge']) ?></span><?php endif; ?><span
+                    class="badge <?= $product['badge'] === 'SALE' ? 'bg-green-600 text-white' : 'bg-black text-white' ?>"><?= h($product['badge']) ?></span><?php endif; ?><span
                     class="badge bg-zinc-200 text-zinc-700">In stock</span></div>
             <p class="mt-4 text-[10px] font-bold uppercase tracking-[.16em] text-zinc-500"><?= h($product['brand']) ?>
             </p>
@@ -111,9 +112,9 @@ require APP_ROOT . '/includes/header.php';
                     class="text-zinc-500">(<?= (int) $product['review_count'] ?> reviews)</span></div>
             <div class="mt-5 flex items-center gap-3 border-b border-zinc-200 pb-5"><span
                     class="text-2xl font-bold"><?= $variants ? 'From ' : '' ?><?= money($product['price']) ?></span><?php if ($product['compare_price']): ?><span
-                        class="text-sm text-zinc-400 line-through"><?= money($product['compare_price']) ?></span><span
-                        class="badge bg-green-100 text-green-700"><?= round((1 - $product['price'] / $product['compare_price']) * 100) ?>%
-                        off</span><?php endif; ?></div>
+                    class="text-sm text-zinc-400 line-through"><?= money($product['compare_price']) ?></span><span
+                    class="badge bg-green-100 text-green-700"><?= round((1 - $product['price'] / $product['compare_price']) * 100) ?>%
+                    off</span><?php endif; ?></div>
             <dl class="mt-5 grid grid-cols-2 gap-y-4 text-sm">
                 <div>
                     <dt class="text-xs text-zinc-500">Shape</dt>
@@ -137,13 +138,13 @@ require APP_ROOT . '/includes/header.php';
                     name="product_id" value="<?= (int) $product['id'] ?>"><input type="hidden" name="return_to"
                     value="product.php?slug=<?= h(rawurlencode($product['slug'])) ?>">
                 <?php if ($variants): ?><div class="mb-5"><label class="label" for="variant">Select frame
-                            option</label><select class="input" id="variant" name="variant_id" required>
-                            <option value="">Choose an option</option><?php foreach ($variants as $variant): ?><option
-                                    value="<?= (int) $variant['id'] ?>"
-                                    <?= (int) $variant['stock_quantity'] < 1 ? 'disabled' : '' ?>>
-                                    <?= h($variant['name']) ?><?= $variant['color'] ? ' · ' . h($variant['color']) : '' ?><?= (float) $variant['price_adjustment'] ? ' · ' . ((float) $variant['price_adjustment'] > 0 ? '+' : '') . money($variant['price_adjustment']) : '' ?><?= (int) $variant['stock_quantity'] < 1 ? ' · Sold out' : '' ?>
-                                </option><?php endforeach; ?>
-                        </select></div><?php endif; ?>
+                        option</label><select class="input" id="variant" name="variant_id" required>
+                        <option value="">Choose an option</option><?php foreach ($variants as $variant): ?><option
+                            value="<?= (int) $variant['id'] ?>"
+                            <?= (int) $variant['stock_quantity'] < 1 ? 'disabled' : '' ?>>
+                            <?= h($variant['name']) ?><?= $variant['color'] ? ' · ' . h($variant['color']) : '' ?><?= (float) $variant['price_adjustment'] ? ' · ' . ((float) $variant['price_adjustment'] > 0 ? '+' : '') . money($variant['price_adjustment']) : '' ?><?= (int) $variant['stock_quantity'] < 1 ? ' · Sold out' : '' ?>
+                        </option><?php endforeach; ?>
+                    </select></div><?php endif; ?>
                 <div class="mt-7 border-t border-zinc-200 pt-5">
                     <p class="label">Description</p>
                     <div class="rich-description is-collapsed mt-2 text-sm leading-6 text-zinc-600"
@@ -164,9 +165,18 @@ require APP_ROOT . '/includes/header.php';
                             type="button" data-quantity-increase aria-label="Increase quantity">+</button>
                     </div>
                 </div>
-                <div class="mt-5 grid grid-cols-2 gap-3"><button class="button button-primary" type="submit">Add to
-                        cart</button><button class="button button-secondary" formaction="<?= h(url('checkout.php')) ?>"
-                        name="return_to" type="submit" value="checkout.php">Buy now</button></div>
+                <div class="mt-5 grid grid-cols-2 gap-3"><button class="button button-primary" type="submit"><svg
+                            aria-hidden="true" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="1.8">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M2.75 3.75h1.6l1.75 10.1a1.75 1.75 0 001.72 1.45h9.96a1.75 1.75 0 001.7-1.3l1.28-5.25H5.05" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.25 19.25h.01M17.25 19.25h.01" />
+                        </svg>Add to cart</button><button class="button button-secondary"
+                        formaction="<?= h(url('checkout.php')) ?>" name="return_to" type="submit"
+                        value="checkout.php"><svg aria-hidden="true" class="h-4 w-4 shrink-0" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.25 2.75L5.75 13h5.5l-.5 8.25L18.25 11h-5.5l.5-8.25z" />
+                        </svg>Buy now</button></div>
             </form>
             <form class="mt-3" method="post" action="<?= h(url('wishlist.php')) ?>"><?= csrf_field() ?><input
                     type="hidden" name="action" value="toggle_wishlist"><input type="hidden" name="product_id"
@@ -193,58 +203,58 @@ require APP_ROOT . '/includes/header.php';
         <div>
             <p class="label">Customer reviews</p>
             <h2 class="text-2xl font-bold tracking-[-.04em]">What people are saying</h2><?php if ($approvedReviews): ?>
-                <div class="mt-6 space-y-5"><?php foreach ($approvedReviews as $review): ?><article
-                            class="border-b border-zinc-200 pb-5">
-                            <div class="flex items-center justify-between gap-4"><strong
-                                    class="text-sm"><?= h($review['reviewer_name']) ?></strong><span
-                                    class="text-xs text-amber-600"><?= str_repeat('★', (int) $review['rating']) ?></span></div>
-                            <?php if ($review['title']): ?><h3 class="mt-3 text-sm font-bold"><?= h($review['title']) ?></h3>
-                            <?php endif; ?><p class="mt-2 text-sm leading-6 text-zinc-600"><?= h($review['body']) ?></p><span
-                                class="mt-3 block text-[11px] text-zinc-500"><?= date('d M Y', strtotime($review['created_at'])) ?></span>
-                        </article><?php endforeach; ?></div><?php else: ?><p class="mt-5 text-sm text-zinc-500">No
-                        reviews yet. Be the first to share your experience.</p><?php endif; ?>
+            <div class="mt-6 space-y-5"><?php foreach ($approvedReviews as $review): ?><article
+                    class="border-b border-zinc-200 pb-5">
+                    <div class="flex items-center justify-between gap-4"><strong
+                            class="text-sm"><?= h($review['reviewer_name']) ?></strong><span
+                            class="text-xs text-amber-600"><?= str_repeat('★', (int) $review['rating']) ?></span></div>
+                    <?php if ($review['title']): ?><h3 class="mt-3 text-sm font-bold"><?= h($review['title']) ?></h3>
+                    <?php endif; ?><p class="mt-2 text-sm leading-6 text-zinc-600"><?= h($review['body']) ?></p><span
+                        class="mt-3 block text-[11px] text-zinc-500"><?= date('d M Y', strtotime($review['created_at'])) ?></span>
+                </article><?php endforeach; ?></div><?php else: ?><p class="mt-5 text-sm text-zinc-500">No
+                reviews yet. Be the first to share your experience.</p><?php endif; ?>
         </div>
         <aside class="rounded-xl bg-mist p-5 sm:p-6" id="write-review">
             <h2 class="text-lg font-bold">Write a review</h2><?php if (!current_user()): ?><p
-                    class="mt-3 text-sm leading-6 text-zinc-600">Anyone can read reviews. Sign in after your delivered, paid
-                    purchase to write one.</p><a class="button button-secondary mt-5 w-full"
-                    href="<?= h(url('login.php')) ?>">Sign in to review</a><?php elseif ($reviewEligibility['eligible']): ?>
-                <form class="mt-5 space-y-4" method="post"><?= csrf_field() ?><input type="hidden" name="action"
-                        value="submit_review">
-                    <fieldset>
-                        <legend class="label">Your rating</legend>
-                        <div class="review-rating"><input id="review-rating-5" name="rating" required type="radio"
-                                value="5"><label for="review-rating-5"><span class="sr-only">5 stars</span></label><input
-                                id="review-rating-4" name="rating" type="radio" value="4"><label for="review-rating-4"><span
-                                    class="sr-only">4 stars</span></label><input id="review-rating-3" name="rating"
-                                type="radio" value="3"><label for="review-rating-3"><span class="sr-only">3
-                                    stars</span></label><input id="review-rating-2" name="rating" type="radio"
-                                value="2"><label for="review-rating-2"><span class="sr-only">2 stars</span></label><input
-                                id="review-rating-1" name="rating" type="radio" value="1"><label for="review-rating-1"><span
-                                    class="sr-only">1 star</span></label></div>
-                    </fieldset>
-                    <div><label class="label">Review title</label><input class="input" maxlength="180" name="title"
-                            placeholder="Optional headline"></div>
-                    <div><label class="label">Your review</label><textarea class="input min-h-28" maxlength="2000"
-                            name="body" required placeholder="Tell us about your frame and fit..."></textarea></div><button
-                        class="button button-primary w-full" type="submit">Submit review</button>
-                    <p class="text-center text-[11px] text-zinc-500">Your review will appear immediately.</p>
-                </form><?php else: ?><div class="mt-4 rounded-lg border border-zinc-200 bg-white p-4"><span
-                        class="material-symbols-outlined text-zinc-500">verified_user</span>
-                    <p class="mt-2 text-sm leading-6 text-zinc-600"><?= h($reviewEligibility['reason']) ?></p>
-                    <?php if (!$reviewEligibility['already_reviewed']): ?><a
-                            class="mt-4 inline-block text-xs font-bold underline underline-offset-4"
-                            href="<?= h(url('orders.php')) ?>">View my orders</a><?php endif; ?>
-                </div><?php endif; ?>
+                class="mt-3 text-sm leading-6 text-zinc-600">Anyone can read reviews. Sign in after your delivered, paid
+                purchase to write one.</p><a class="button button-secondary mt-5 w-full"
+                href="<?= h(url('login.php')) ?>">Sign in to review</a><?php elseif ($reviewEligibility['eligible']): ?>
+            <form class="mt-5 space-y-4" method="post"><?= csrf_field() ?><input type="hidden" name="action"
+                    value="submit_review">
+                <fieldset>
+                    <legend class="label">Your rating</legend>
+                    <div class="review-rating"><input id="review-rating-5" name="rating" required type="radio"
+                            value="5"><label for="review-rating-5"><span class="sr-only">5 stars</span></label><input
+                            id="review-rating-4" name="rating" type="radio" value="4"><label for="review-rating-4"><span
+                                class="sr-only">4 stars</span></label><input id="review-rating-3" name="rating"
+                            type="radio" value="3"><label for="review-rating-3"><span class="sr-only">3
+                                stars</span></label><input id="review-rating-2" name="rating" type="radio"
+                            value="2"><label for="review-rating-2"><span class="sr-only">2 stars</span></label><input
+                            id="review-rating-1" name="rating" type="radio" value="1"><label for="review-rating-1"><span
+                                class="sr-only">1 star</span></label></div>
+                </fieldset>
+                <div><label class="label">Review title</label><input class="input" maxlength="180" name="title"
+                        placeholder="Optional headline"></div>
+                <div><label class="label">Your review</label><textarea class="input min-h-28" maxlength="2000"
+                        name="body" required placeholder="Tell us about your frame and fit..."></textarea></div><button
+                    class="button button-primary w-full" type="submit">Submit review</button>
+                <p class="text-center text-[11px] text-zinc-500">Your review will appear immediately.</p>
+            </form><?php else: ?><div class="mt-4 rounded-lg border border-zinc-200 bg-white p-4"><span
+                    class="material-symbols-outlined text-zinc-500">verified_user</span>
+                <p class="mt-2 text-sm leading-6 text-zinc-600"><?= h($reviewEligibility['reason']) ?></p>
+                <?php if (!$reviewEligibility['already_reviewed']): ?><a
+                    class="mt-4 inline-block text-xs font-bold underline underline-offset-4"
+                    href="<?= h(url('orders.php')) ?>">View my orders</a><?php endif; ?>
+            </div><?php endif; ?>
         </aside>
     </div>
 </section>
 <?php if ($related): ?><section class="mx-auto max-w-[1440px] px-5 pb-12 lg:px-10">
-        <h2 class="mb-7 text-2xl font-bold tracking-[-.04em]">You might also like</h2>
-        <div class="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4 lg:gap-6">
-            <?php foreach (array_slice($related, 0, 4) as $relatedProduct): ?><?php $product = $relatedProduct;
+    <h2 class="mb-7 text-2xl font-bold tracking-[-.04em]">You might also like</h2>
+    <div class="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4 lg:gap-6">
+        <?php foreach (array_slice($related, 0, 4) as $relatedProduct): ?><?php $product = $relatedProduct;
                                                                                 $returnTo = 'product.php?slug=' . rawurlencode($_GET['slug']);
                                                                                 require APP_ROOT . '/includes/product-card.php'; ?><?php endforeach; ?>
-        </div>
-    </section><?php endif; ?>
+    </div>
+</section><?php endif; ?>
 <?php require APP_ROOT . '/includes/footer.php'; ?>

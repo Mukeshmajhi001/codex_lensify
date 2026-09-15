@@ -3,7 +3,7 @@ require_once dirname(__DIR__) . '/app/bootstrap.php';
 require_admin();
 $status = (string) ($_GET['status'] ?? '');
 $orders = [];
-$newOrderCount = unread_notification_count_by_title('New order received', (int) current_user()['id']);
+$newOrderCount = unread_notification_count_by_paths(['admin/order.php'], (int) current_user()['id']);
 if (db_available()) {
     $sql = 'SELECT o.*, COUNT(oi.id) item_count FROM orders o LEFT JOIN order_items oi ON oi.order_id=o.id';
     $params = [];

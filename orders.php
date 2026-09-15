@@ -24,6 +24,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'reque
             flash('error', 'A return request already exists for this order.');
         } else {
             db()->prepare('INSERT INTO return_requests (order_id, user_id, reason, details) VALUES (?, ?, ?, ?)')->execute([$orderId, current_user()['id'], $reason, $details ?: null]);
+            $returnId = (int) db()->lastInsertId();
+            $orderNumberStatement = db()->prepare('SELECT order_number FROM orders WHERE id = ? LIMIT 1');
+            $orderNumberStatement->execute([$orderId]);
+            $orderNumber = (string) $orderNumberStatement->fetchColumn();
+            notify_admins('New return request', "Return request for order {$orderNumber} needs review.", 'admin/returns.php?id=' . $returnId);
             flash('success', 'Your return request has been submitted for review.');
         }
     }

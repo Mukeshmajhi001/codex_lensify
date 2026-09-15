@@ -15,6 +15,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'conta
         flash('error', 'Database is not ready. Import database/final.sql first.');
     } else {
         db()->prepare('INSERT INTO contact_messages (name, email, subject, message) VALUES (?, ?, ?, ?)')->execute([$name, $email, $subject, $message]);
+        $messageId = (int) db()->lastInsertId();
+        notify_admins('New message received', "{$name} sent a message: {$subject}.", 'admin/messages.php?id=' . $messageId);
         flash('success', 'Thank you — we’ll reply within one business day.');
         redirect('contact.php');
     }

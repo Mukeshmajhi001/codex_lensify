@@ -2,6 +2,18 @@ Options -Indexes
 DirectoryIndex index.php
 ErrorDocument 404 /codex_lensify/404
 
+# This checkout is local-only: use the XAMPP database and reject non-local
+# requests at Apache before PHP handles them.
+SetEnv APP_ENV local
+
+<IfModule mod_authz_host.c>
+    <RequireAny>
+        Require ip 127.0.0.1
+        Require ip ::1
+        Require ip 192.168.1.78
+    </RequireAny>
+</IfModule>
+
 <IfModule mod_rewrite.c>
     RewriteEngine On
 

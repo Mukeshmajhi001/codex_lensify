@@ -3,6 +3,7 @@ require_once dirname(__DIR__) . '/app/bootstrap.php';
 require_admin();
 
 $id = (int) ($_GET['id'] ?? $_POST['id'] ?? 0);
+mark_notifications_read_for_target('admin/order.php?id=' . $id);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!verify_csrf()) {
@@ -69,6 +70,9 @@ if (!$order) {
 $itemsStatement = db()->prepare('SELECT * FROM order_items WHERE order_id = ?');
 $itemsStatement->execute([$id]);
 $items = $itemsStatement->fetchAll();
+$returnsStatement = db()->prepare('SELECT * FROM return_requests WHERE order_id = ? ORDER BY created_at DESC');
+$returnsStatement->execute([$id]);
+$returns = $returnsStatement->fetchAll();
 $adminPage = 'orders';
 $pageTitle = 'Order ' . $order['order_number'];
 require APP_ROOT . '/includes/admin-header.php';
@@ -136,6 +140,24 @@ require APP_ROOT . '/includes/admin-header.php';
                 <?php if ($order['cancelled_at']): ?><p class="mt-3 text-xs text-red-700">Cancelled
                         <?= date('d M Y, H:i', strtotime($order['cancelled_at'])) ?></p><?php endif; ?>
             </section><?php endif; ?>
+        <?php if ($returns): ?>
+            <?php foreach ($returns as $return): ?>
+                <section class="rounded-2xl border border-amber-200 bg-amber-50 p-6">
+                    <div class="flex items-start justify-between gap-4">
+                        <div><p class="label text-amber-800">Return request #RET-<?= str_pad((string) $return['id'], 4, '0', STR_PAD_LEFT) ?></p>
+                            <h2 class="mt-1 font-bold text-amber-950"><?= h($return['reason']) ?></h2></div>
+                        <span class="badge bg-white text-amber-800"><?= h(ucfirst($return['status'])) ?></span>
+                    </div>
+                    <p class="mt-3 whitespace-pre-line text-sm leading-6 text-amber-950"><?= h($return['details'] ?: 'No further details provided.') ?></p>
+                    <form class="mt-5 flex flex-wrap items-end gap-3" method="post" action="<?= h(url('admin/returns.php')) ?>">
+                        <?= csrf_field() ?><input type="hidden" name="action" value="update_return"><input type="hidden" name="id" value="<?= (int) $return['id'] ?>">
+                        <div><label class="label text-amber-800">Update return</label><select class="input bg-white" name="status">
+                            <?php foreach (['requested', 'approved', 'rejected', 'received', 'refunded'] as $status): ?><option value="<?= h($status) ?>" <?= $return['status'] === $status ? 'selected' : '' ?>><?= h(ucfirst($status)) ?></option><?php endforeach; ?>
+                        </select></div><button class="button button-primary" type="submit">Save return status</button>
+                    </form>
+                </section>
+            <?php endforeach; ?>
+        <?php endif; ?>
     </div>
     <aside class="h-fit space-y-6">
         <section class="rounded-2xl border border-zinc-300 bg-white p-6">

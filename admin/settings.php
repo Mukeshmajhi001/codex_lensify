@@ -43,13 +43,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         redirect('admin/settings.php');
     }
     if ($action === 'save_store_settings') {
-        $keys = ['store_name', 'support_email', 'free_shipping_threshold', 'announcement_text'];
+        $keys = ['store_name', 'support_email', 'free_shipping_threshold'];
         foreach ($keys as $key) {
             $value = trim((string)($_POST[$key] ?? ''));
             db()->prepare('INSERT INTO site_settings (setting_key,setting_value,updated_by) VALUES (?,?,?) ON DUPLICATE KEY UPDATE setting_value=VALUES(setting_value),updated_by=VALUES(updated_by)')->execute([$key, $value, current_user()['id']]);
         }
-        $maintenance = isset($_POST['maintenance_mode']) ? '1' : '0';
-        db()->prepare('INSERT INTO site_settings (setting_key,setting_value,updated_by) VALUES (?,?,?) ON DUPLICATE KEY UPDATE setting_value=VALUES(setting_value),updated_by=VALUES(updated_by)')->execute(['maintenance_mode', $maintenance, current_user()['id']]);
         log_admin('Updated store settings');
         flash('success', 'Store settings saved.');
         redirect('admin/settings.php');
@@ -125,13 +123,6 @@ require APP_ROOT . '/includes/admin-header.php';
             <div><label class="label">Free shipping threshold (NPR)</label><input class="input" min="0"
                     name="free_shipping_threshold" type="number"
                     value="<?= h($settings['free_shipping_threshold'] ?? '2000') ?>"></div>
-            <div class="md:col-span-2"><label class="label">Announcement text</label><input class="input"
-                    name="announcement_text" value="<?= h($settings['announcement_text'] ?? '') ?>"></div><label
-                class="flex items-start gap-3 rounded-lg bg-amber-50 p-4 text-sm md:col-span-2"><input
-                    class="mt-0.5 rounded border-amber-300 text-black focus:ring-black" name="maintenance_mode"
-                    type="checkbox" <?= !empty($settings['maintenance_mode']) ? 'checked' : '' ?>><span><strong
-                        class="block">Maintenance mode</strong><small class="mt-1 block text-zinc-600">Storefront
-                        maintenance screen should be enabled before using this in production.</small></span></label>
             <div class="md:col-span-2"><button class="button button-primary" type="submit">Save store settings</button>
             </div>
         </form>

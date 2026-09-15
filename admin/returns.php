@@ -8,15 +8,53 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'updat
     }
     $id = (int)($_POST['id'] ?? 0);
     $status = (string)($_POST['status'] ?? '');
+    mark_notifications_read_for_target('admin/returns.php?id=' . $id);
     $valid = ['requested', 'approved', 'rejected', 'received', 'refunded'];
-    if (!in_array($status, $valid, true)) {
-        flash('error', 'Invalid return status.');
+    $allowedTransitions = [
+        'requested' => ['requested', 'approved', 'rejected'],
+        'approved' => ['approved', 'received', 'rejected'],
+        'received' => ['received', 'refunded'],
+        'rejected' => ['rejected'],
+        'refunded' => ['refunded'],
+    ];
+    $requestStatement = db()->prepare('SELECT rr.id, rr.status, rr.order_id, rr.user_id, o.order_number, o.order_status, o.payment_status FROM return_requests rr INNER JOIN orders o ON o.id = rr.order_id WHERE rr.id = ? LIMIT 1');
+    $requestStatement->execute([$id]);
+    $request = $requestStatement->fetch();
+
+    if (!$request) {
+        flash('error', 'Return request not found.');
+    } elseif (!in_array($status, $valid, true) || !in_array($status, $allowedTransitions[$request['status']] ?? [], true)) {
+        flash('error', 'That return status change is not allowed.');
+    } elseif ($status === 'refunded' && $request['status'] !== 'received') {
+        flash('error', 'Mark the returned item as received before refunding it.');
+    } elseif ($status === 'approved' && $request['order_status'] !== 'delivered') {
+        flash('error', 'Only delivered orders can be approved for return.');
     } else {
-        db()->prepare('UPDATE return_requests SET status=? WHERE id=?')->execute([$status, $id]);
-        log_admin('Updated return request #' . $id . ' to ' . $status);
-        flash('success', 'Return status updated.');
+        db()->beginTransaction();
+        try {
+            db()->prepare('UPDATE return_requests SET status=? WHERE id=?')->execute([$status, $id]);
+            if ($status === 'refunded') {
+                db()->prepare('UPDATE orders SET order_status = "returned", payment_status = "refunded" WHERE id = ?')->execute([(int) $request['order_id']]);
+            }
+            db()->commit();
+            if ((int) $request['user_id'] > 0 && $request['status'] !== $status) {
+                $message = "Return request for order {$request['order_number']} is now " . ucfirst($status) . '.';
+                create_notification((int) $request['user_id'], 'Return request update', $message, 'orders.php');
+            }
+            log_admin('Updated return request #' . $id . ' to ' . $status);
+            flash('success', 'Return status updated.');
+        } catch (Throwable $exception) {
+            if (db()->inTransaction()) {
+                db()->rollBack();
+            }
+            flash('error', 'Could not update the return request.');
+        }
     }
     redirect('admin/returns.php');
+}
+$openedReturnId = (int) ($_GET['id'] ?? 0);
+if ($openedReturnId > 0) {
+    mark_notifications_read_for_target('admin/returns.php?id=' . $openedReturnId);
 }
 $returns = db()->query('SELECT rr.*,o.order_number,o.total,u.first_name,u.last_name,u.email FROM return_requests rr JOIN orders o ON o.id=rr.order_id LEFT JOIN users u ON u.id=rr.user_id ORDER BY rr.created_at DESC')->fetchAll();
 $adminPage = 'returns';
@@ -42,7 +80,7 @@ require APP_ROOT . '/includes/admin-header.php';
             </thead>
             <tbody class="divide-y divide-zinc-200"><?php foreach ($returns as $return): ?><tr>
                         <td class="px-6 py-4">
-                            <strong>#RET-<?= str_pad((string)$return['id'], 4, '0', STR_PAD_LEFT) ?></strong><span
+                            <a class="font-bold underline underline-offset-2" href="<?= h(url('admin/returns.php?id=' . (int) $return['id'])) ?>">#RET-<?= str_pad((string)$return['id'], 4, '0', STR_PAD_LEFT) ?></a><span
                                 class="mt-1 block text-xs text-zinc-500"><?= date('d M Y', strtotime($return['created_at'])) ?></span>
                         </td>
                         <td class="px-6 py-4"><strong
@@ -61,7 +99,7 @@ require APP_ROOT . '/includes/admin-header.php';
                                     class="rounded-lg border-zinc-300 py-1.5 text-xs focus:border-black focus:ring-black"
                                     name="status"
                                     onchange="this.form.submit()"><?php foreach (['requested', 'approved', 'rejected', 'received', 'refunded'] as $status): ?>
-                                        <option <?= $return['status'] === $status ? 'selected' : '' ?>>
+                                        <option value="<?= h($status) ?>" <?= $return['status'] === $status ? 'selected' : '' ?>>
                                             <?= h(ucfirst($status)) ?></option>
                                     <?php endforeach; ?>
                                 </select></form>
