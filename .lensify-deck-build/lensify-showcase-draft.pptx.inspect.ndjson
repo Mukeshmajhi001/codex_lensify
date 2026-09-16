@@ -1,0 +1,621 @@
+{"kind":"deck","id":"pr/eox62p","name":"Deck"}
+{"kind":"layout","layoutId":"98cdfe21-ce97-4ac1-91ab-0a6f94f85c77","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"ae025937-5543-4700-aced-ef47d31e1c12","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/cs49tx","slide":1,"title":"LENSIFY","textShapes":6}
+{"kind":"shape","id":"sh/6dwvyd87","slide":1,"bbox":[0,0,810,720]}
+{"kind":"textbox","id":"sh/7e5w7ips","slide":1,"text":"LENSIFY","textPreview":"LENSIFY","textChars":7,"textLines":1,"bbox":[72,72,300,26]}
+{"kind":"textbox","id":"sh/kbudw3q1","slide":1,"text":"See better.\nShop smarter.","textPreview":"See better. | Shop smarter.","textChars":25,"textLines":2,"bbox":[72,170,590,190]}
+{"kind":"textbox","id":"sh/5cne587m","slide":1,"text":"A premium eyewear commerce experience, explained from storefront to operations.","textPreview":"A premium eyewear commerce experience, explained from storefront to operations.","textChars":79,"textLines":1,"bbox":[76,402,510,70]}
+{"kind":"shape","id":"sh/ipcvud8b","slide":1,"bbox":[76,548,150,30]}
+{"kind":"textbox","id":"sh/jqlw3ypw","slide":1,"text":"PRODUCT SHOWCASE","textPreview":"PRODUCT SHOWCASE","textChars":16,"textLines":1,"bbox":[88,555,126,14]}
+{"kind":"textbox","id":"sh/o7yx87ql","slide":1,"text":"LENSIFY / PRODUCT STORY","textPreview":"LENSIFY / PRODUCT STORY","textChars":23,"textLines":1,"bbox":[72,676,420,18]}
+{"kind":"textbox","id":"sh/p87ehc76","slide":1,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[1180,676,28,18]}
+{"kind":"image","id":"im/8jylwzyt","slide":1,"name":"","alt":"Lensify campaign visual","bbox":[720,0,560,720]}
+{"kind":"notes","id":"nt/cs49tx","slide":1,"text":"Open with the product promise. Lensify combines a fashion-forward storefront with the operational tools needed to run an eyewear catalogue and order flow."}
+{"kind":"slide","id":"sl/szk3yj","slide":2,"title":"01 / TODAY","textShapes":17}
+{"kind":"textbox","id":"sh/u1gf6hsn","slide":2,"text":"01 / TODAY","textPreview":"01 / TODAY","textChars":10,"textLines":1,"bbox":[72,52,500,20]}
+{"kind":"textbox","id":"sh/h47e1cbe","slide":2,"text":"What I’m showing today","textPreview":"What I’m showing today","textChars":22,"textLines":1,"bbox":[72,88,1050,72]}
+{"kind":"textbox","id":"sh/w3yx87at","slide":2,"text":"A live product story, not a feature dump","textPreview":"A live product story, not a feature dump","textChars":40,"textLines":1,"bbox":[74,170,900,42]}
+{"kind":"shape","id":"sh/j69w3mtk","slide":2,"bbox":[72,226,1136,0]}
+{"kind":"textbox","id":"sh/i50fahsz","slide":2,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[72,280,42,28]}
+{"kind":"textbox","id":"sh/58re5wba","slide":2,"text":"The storefront experience","textPreview":"The storefront experience","textChars":25,"textLines":1,"bbox":[130,278,490,40]}
+{"kind":"shape","id":"sh/47ixcra5","slide":2,"bbox":[130,320,520,0]}
+{"kind":"textbox","id":"sh/ru9w7mtg","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[72,346,42,28]}
+{"kind":"textbox","id":"sh/qt0fe1sv","slide":2,"text":"The customer journey","textPreview":"The customer journey","textChars":20,"textLines":1,"bbox":[130,344,490,40]}
+{"kind":"shape","id":"sh/onqpkb2l","slide":2,"bbox":[130,386,520,0]}
+{"kind":"textbox","id":"sh/pozqtg36","slide":2,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[72,412,42,28]}
+{"kind":"textbox","id":"sh/2l87ilkf","slide":2,"text":"The admin operating system","textPreview":"The admin operating system","textChars":26,"textLines":1,"bbox":[130,410,490,40]}
+{"kind":"shape","id":"sh/3mh8rql0","slide":2,"bbox":[130,452,520,0]}
+{"kind":"textbox","id":"sh/cbqpov2h","slide":2,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[72,478,42,28]}
+{"kind":"textbox","id":"sh/dcjqx032","slide":2,"text":"The technical foundation","textPreview":"The technical foundation","textChars":24,"textLines":1,"bbox":[130,476,490,40]}
+{"kind":"shape","id":"sh/q987mlkr","slide":2,"bbox":[130,518,520,0]}
+{"kind":"textbox","id":"sh/bah8vqlw","slide":2,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[72,544,42,28]}
+{"kind":"textbox","id":"sh/kfa9sf2t","slide":2,"text":"What comes next","textPreview":"What comes next","textChars":15,"textLines":1,"bbox":[130,542,490,40]}
+{"kind":"shape","id":"sh/lgjq103e","slide":2,"bbox":[130,584,520,0]}
+{"kind":"shape","id":"sh/9kvypgr6","slide":2,"bbox":[810,270,350,290]}
+{"kind":"textbox","id":"sh/8jmhwbql","slide":2,"text":"33","textPreview":"33","textChars":2,"textLines":1,"bbox":[850,300,220,110]}
+{"kind":"textbox","id":"sh/nidgn690","slide":2,"text":"slides\nfrom browse to roadmap","textPreview":"slides | from browse to roadmap","textChars":29,"textLines":2,"bbox":[852,422,220,70]}
+{"kind":"textbox","id":"sh/mx4zu18f","slide":2,"text":"LENSIFY / PROJECT WALKTHROUGH","textPreview":"LENSIFY / PROJECT WALKTHROUGH","textChars":29,"textLines":1,"bbox":[72,676,420,18]}
+{"kind":"textbox","id":"sh/hofytgr2","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1180,676,28,18]}
+{"kind":"notes","id":"nt/szk3yj","slide":2,"text":"Set expectations for the walkthrough. I will move from what a customer sees to what the team uses behind the scenes, then close with implementation boundaries and next steps."}
+{"kind":"slide","id":"sl/cdnil0","slide":3,"title":"02 / PRODUCT","textShapes":10}
+{"kind":"textbox","id":"sh/w3y583e1","slide":3,"text":"02 / PRODUCT","textPreview":"02 / PRODUCT","textChars":12,"textLines":1,"bbox":[72,52,500,20]}
+{"kind":"textbox","id":"sh/v2p4zydg","slide":3,"text":"Product in one sentence","textPreview":"Product in one sentence","textChars":23,"textLines":1,"bbox":[72,88,1050,72]}
+{"kind":"textbox","id":"sh/a1wn6twv","slide":3,"text":"Lensify turns eyewear discovery into a clear, complete buying journey.","textPreview":"Lensify turns eyewear discovery into a clear, complete buying journey.","textChars":70,"textLines":1,"bbox":[74,170,900,42]}
+{"kind":"shape","id":"sh/90nmxova","slide":3,"bbox":[72,226,1136,0]}
+{"kind":"textbox","id":"sh/ny54vedk","slide":3,"text":"Premium eyewear\ne-commerce","textPreview":"Premium eyewear | e-commerce","textChars":26,"textLines":2,"bbox":[500,296,520,90]}
+{"kind":"textbox","id":"sh/mxwn29wz","slide":3,"text":"A responsive PHP application with a polished catalogue, session bag, checkout, customer account and admin console.","textPreview":"A responsive PHP application with a polished catalogue, session bag, checkout, customer account and admin console.","textChars":114,"textLines":1,"bbox":[502,424,520,82]}
+{"kind":"shape","id":"sh/lcnmt4ve","slide":3,"bbox":[502,548,150,30]}
+{"kind":"textbox","id":"sh/0be50jet","slide":3,"text":"PHP 8","textPreview":"PHP 8","textChars":5,"textLines":1,"bbox":[514,555,126,14]}
+{"kind":"shape","id":"sh/21kv6dwf","slide":3,"bbox":[670,548,150,30]}
+{"kind":"textbox","id":"sh/32twzidk","slide":3,"text":"MYSQL","textPreview":"MYSQL","textChars":5,"textLines":1,"bbox":[682,555,126,14]}
+{"kind":"shape","id":"sh/o32d8ne5","slide":3,"bbox":[838,548,150,30]}
+{"kind":"textbox","id":"sh/p4be1svq","slide":3,"text":"TAILWIND","textPreview":"TAILWIND","textChars":8,"textLines":1,"bbox":[850,555,126,14]}
+{"kind":"textbox","id":"sh/ex0v2dw3","slide":3,"text":"LENSIFY / PROJECT WALKTHROUGH","textPreview":"LENSIFY / PROJECT WALKTHROUGH","textChars":29,"textLines":1,"bbox":[72,676,420,18]}
+{"kind":"textbox","id":"sh/fy9cvydo","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1180,676,28,18]}
+{"kind":"image","id":"im/58jmp4fe","slide":3,"name":"","geometry":"roundRect","alt":"Eyewear product","bbox":[72,280,350,300]}
+{"kind":"notes","id":"nt/cdnil0","slide":3,"text":"This is the simplest way to describe the project. It is both a shopping experience and a small operating system for the business behind it."}
+{"kind":"slide","id":"sl/datkpd","slide":4,"title":"03 / CONTEXT","textShapes":11}
+{"kind":"textbox","id":"sh/c7ipkjit","slide":4,"text":"03 / CONTEXT","textPreview":"03 / CONTEXT","textChars":12,"textLines":1,"bbox":[72,52,500,20]}
+{"kind":"textbox","id":"sh/bm9obeh8","slide":4,"text":"Why this project exists","textPreview":"Why this project exists","textChars":23,"textLines":1,"bbox":[72,88,1050,72]}
+{"kind":"textbox","id":"sh/ql07i90n","slide":4,"text":"Eyewear needs more confidence than a typical catalogue purchase.","textPreview":"Eyewear needs more confidence than a typical catalogue purchase.","textChars":64,"textLines":1,"bbox":[74,170,900,42]}
+{"kind":"shape","id":"sh/pkr694z2","slide":4,"bbox":[72,226,1136,0]}
+{"kind":"textbox","id":"sh/ojipgzix","slide":4,"text":"The customer needs","textPreview":"The customer needs","textChars":18,"textLines":1,"bbox":[72,280,480,28]}
+{"kind":"textbox","id":"sh/3i9o7uhc","slide":4,"text":"Find a frame quickly\nUnderstand the product\nChoose the right lens type\nKnow what happens after payment","textPreview":"Find a frame quickly | Understand the product | Choose the right lens type | Know what happens after payment","textChars":102,"textLines":4,"bbox":[72,320,480,210]}
+{"kind":"shape","id":"sh/2h07e90r","slide":4,"bbox":[632,278,0,0]}
+{"kind":"textbox","id":"sh/9gvql8zm","slide":4,"text":"The business needs","textPreview":"The business needs","textChars":18,"textLines":1,"bbox":[700,280,480,28]}
+{"kind":"textbox","id":"sh/8fmps3i1","slide":4,"text":"Manage products and variants\nTrack stock and orders\nModerate reviews and messages\nKeep a usable audit trail","textPreview":"Manage products and variants | Track stock and orders | Moderate reviews and messages | Keep a usable audit trail","textChars":107,"textLines":4,"bbox":[700,320,480,210]}
+{"kind":"shape","id":"sh/ipk7m1wn","slide":4,"bbox":[72,578,150,30]}
+{"kind":"textbox","id":"sh/3qt8v6x8","slide":4,"text":"OPPORTUNITY","textPreview":"OPPORTUNITY","textChars":11,"textLines":1,"bbox":[84,585,126,14]}
+{"kind":"shape","id":"sh/4rmpobet","slide":4,"bbox":[700,578,150,30]}
+{"kind":"textbox","id":"sh/5svqxwfe","slide":4,"text":"CONTROL","textPreview":"CONTROL","textChars":7,"textLines":1,"bbox":[712,585,126,14]}
+{"kind":"textbox","id":"sh/ulk7ihwr","slide":4,"text":"LENSIFY / PROJECT WALKTHROUGH","textPreview":"LENSIFY / PROJECT WALKTHROUGH","textChars":29,"textLines":1,"bbox":[72,676,420,18]}
+{"kind":"textbox","id":"sh/vmt8rmxc","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1180,676,28,18]}
+{"kind":"notes","id":"nt/datkpd","slide":4,"text":"The project balances two sides of commerce. The customer needs clarity at the moment of choice, while the operator needs visibility after the purchase."}
+{"kind":"slide","id":"sl/vf9pe8","slide":5,"title":"04 / DESIGN SYSTEM","textShapes":10}
+{"kind":"textbox","id":"sh/q543yl43","slide":5,"text":"04 / DESIGN SYSTEM","textPreview":"04 / DESIGN SYSTEM","textChars":18,"textLines":1,"bbox":[72,52,500,20]}
+{"kind":"textbox","id":"sh/d8vmtgnu","slide":5,"text":"Design direction","textPreview":"Design direction","textChars":16,"textLines":1,"bbox":[72,88,1050,72]}
+{"kind":"textbox","id":"sh/c7ml0bm9","slide":5,"text":"Editorial typography, monochrome surfaces and space to breathe","textPreview":"Editorial typography, monochrome surfaces and space to breathe","textChars":62,"textLines":1,"bbox":[74,170,900,42]}
+{"kind":"shape","id":"sh/zad4vq50","slide":5,"bbox":[72,226,1136,0]}
+{"kind":"shape","id":"sh/e94n2l4f","slide":5,"bbox":[72,282,210,180]}
+{"kind":"shape","id":"sh/1wfmx0nq","slide":5,"bbox":[298,282,210,180]}
+{"kind":"shape","id":"sh/0b654vml","slide":5,"bbox":[524,282,210,180]}
+{"kind":"shape","id":"sh/nyx4za5w","slide":5,"bbox":[750,282,210,180]}
+{"kind":"textbox","id":"sh/mxon654b","slide":5,"text":"INK","textPreview":"INK","textChars":3,"textLines":1,"bbox":[92,420,150,20]}
+{"kind":"textbox","id":"sh/sbm9g3mp","slide":5,"text":"MIST","textPreview":"MIST","textChars":4,"textLines":1,"bbox":[318,420,150,20]}
+{"kind":"textbox","id":"sh/tcvq983a","slide":5,"text":"WARM","textPreview":"WARM","textChars":4,"textLines":1,"bbox":[544,420,150,20]}
+{"kind":"textbox","id":"sh/6p4red4j","slide":5,"text":"SAGE","textPreview":"SAGE","textChars":4,"textLines":1,"bbox":[770,420,150,20]}
+{"kind":"textbox","id":"sh/7ad87il4","slide":5,"text":"Large headlines create a fashion-led first impression. Thin rules, generous margins and restrained color keep the interface easy to scan.","textPreview":"Large headlines create a fashion-led first impression. Thin rules, generous margins and restrained color keep the interface easy to scan.","textChars":137,"textLines":1,"bbox":[72,516,900,60]}
+{"kind":"textbox","id":"sh/gf69knml","slide":5,"text":"LENSIFY / PROJECT WALKTHROUGH","textPreview":"LENSIFY / PROJECT WALKTHROUGH","textChars":29,"textLines":1,"bbox":[72,676,420,18]}
+{"kind":"textbox","id":"sh/hgfqds36","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1180,676,28,18]}
+{"kind":"notes","id":"nt/vf9pe8","slide":5,"text":"The visual system deliberately avoids a crowded marketplace look. The palette creates a calm premium tone, while spacing and typography do much of the hierarchy work."}
+{"kind":"slide","id":"sl/zaxdfc","slide":6,"title":"05 / JOURNEY","textShapes":16}
+{"kind":"textbox","id":"sh/0fudwjel","slide":6,"text":"05 / JOURNEY","textPreview":"05 / JOURNEY","textChars":12,"textLines":1,"bbox":[72,52,500,20]}
+{"kind":"textbox","id":"sh/zulwnyd0","slide":6,"text":"Experience map","textPreview":"Experience map","textChars":14,"textLines":1,"bbox":[72,88,1050,72]}
+{"kind":"textbox","id":"sh/ytcvutwf","slide":6,"text":"Every screen has a job in the customer story","textPreview":"Every screen has a job in the customer story","textChars":44,"textLines":1,"bbox":[74,170,900,42]}
+{"kind":"shape","id":"sh/dsjelovu","slide":6,"bbox":[72,226,1136,0]}
+{"kind":"shape","id":"sh/cradsjep","slide":6,"bbox":[72,320,174,118]}
+{"kind":"textbox","id":"sh/bq1cjed4","slide":6,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[90,338,42,22]}
+{"kind":"textbox","id":"sh/qpsvq9wj","slide":6,"text":"Discover","textPreview":"Discover","textChars":8,"textLines":1,"bbox":[90,380,130,28]}
+{"kind":"shape","id":"sh/pojuh4vy","slide":6,"bbox":[246,380,52,0]}
+{"kind":"shape","id":"sh/4nadozed","slide":6,"bbox":[298,320,174,118]}
+{"kind":"textbox","id":"sh/i1s761wz","slide":6,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[316,338,42,22]}
+{"kind":"textbox","id":"sh/j218f6dk","slide":6,"text":"Compare","textPreview":"Compare","textChars":7,"textLines":1,"bbox":[316,380,130,28]}
+{"kind":"shape","id":"sh/k3ap8be5","slide":6,"bbox":[472,380,52,0]}
+{"kind":"shape","id":"sh/54jqhgvq","slide":6,"bbox":[524,320,174,118]}
+{"kind":"textbox","id":"sh/ax872hw3","slide":6,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[542,338,42,22]}
+{"kind":"textbox","id":"sh/vy18bmdo","slide":6,"text":"Choose","textPreview":"Choose","textChars":6,"textLines":1,"bbox":[542,380,130,28]}
+{"kind":"shape","id":"sh/wzap4re9","slide":6,"bbox":[698,380,52,0]}
+{"kind":"shape","id":"sh/x0jqdwvu","slide":6,"bbox":[750,320,174,118]}
+{"kind":"textbox","id":"sh/m987yhw7","slide":6,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[768,338,42,22]}
+{"kind":"textbox","id":"sh/naho7mxc","slide":6,"text":"Checkout","textPreview":"Checkout","textChars":8,"textLines":1,"bbox":[768,380,130,28]}
+{"kind":"shape","id":"sh/bed4zid4","slide":6,"bbox":[924,380,52,0]}
+{"kind":"shape","id":"sh/qd4n6dcz","slide":6,"bbox":[976,320,174,118]}
+{"kind":"textbox","id":"sh/dgfm1sba","slide":6,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[994,338,42,22]}
+{"kind":"textbox","id":"sh/cf658nup","slide":6,"text":"Aftercare","textPreview":"Aftercare","textChars":9,"textLines":1,"bbox":[994,380,130,28]}
+{"kind":"textbox","id":"sh/zix43itg","slide":6,"text":"Browse → product confidence → lens choice → order clarity → repeat relationship","textPreview":"Browse → product confidence → lens choice → order clarity → repeat relationship","textChars":79,"textLines":1,"bbox":[72,522,1000,34]}
+{"kind":"textbox","id":"sh/yhonadcv","slide":6,"text":"LENSIFY / PROJECT WALKTHROUGH","textPreview":"LENSIFY / PROJECT WALKTHROUGH","textChars":29,"textLines":1,"bbox":[72,676,420,18]}
+{"kind":"textbox","id":"sh/l4fm5sbm","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1180,676,28,18]}
+{"kind":"notes","id":"nt/zaxdfc","slide":6,"text":"This map is the spine of the product. Each stage removes a specific point of uncertainty rather than adding features for their own sake."}
+{"kind":"slide","id":"sl/0rq0j8","slide":7,"title":"06 / STOREFRONT","textShapes":11}
+{"kind":"textbox","id":"sh/toz6pg76","slide":7,"text":"06 / STOREFRONT","textPreview":"06 / STOREFRONT","textChars":15,"textLines":1,"bbox":[72,52,500,20]}
+{"kind":"textbox","id":"sh/6l8nu1of","slide":7,"text":"Homepage: first impression","textPreview":"Homepage: first impression","textChars":26,"textLines":1,"bbox":[72,88,1050,72]}
+{"kind":"textbox","id":"sh/7mh4n6p0","slide":7,"text":"A strong landing page makes the catalogue feel intentional","textPreview":"A strong landing page makes the catalogue feel intentional","textChars":58,"textLines":1,"bbox":[74,170,900,42]}
+{"kind":"shape","id":"sh/gra50v6x","slide":7,"bbox":[72,226,1136,0]}
+{"kind":"shape","id":"sh/ep8nylor","slide":7,"bbox":[820,280,340,300]}
+{"kind":"textbox","id":"sh/fq1orqpc","slide":7,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[852,320,42,28]}
+{"kind":"textbox","id":"sh/ova54v6t","slide":7,"text":"Brand cue","textPreview":"Brand cue","textChars":9,"textLines":1,"bbox":[910,318,490,40]}
+{"kind":"shape","id":"sh/pgj6x07e","slide":7,"bbox":[910,360,520,0]}
+{"kind":"textbox","id":"sh/1ob2tkve","slide":7,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[852,394,42,28]}
+{"kind":"textbox","id":"sh/gn21kzut","slide":7,"text":"Campaign moment","textPreview":"Campaign moment","textChars":15,"textLines":1,"bbox":[910,392,490,40]}
+{"kind":"shape","id":"sh/fmt0rud8","slide":7,"bbox":[910,434,520,0]}
+{"kind":"textbox","id":"sh/elkjipcn","slide":7,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[852,468,42,28]}
+{"kind":"textbox","id":"sh/pcv2x4va","slide":7,"text":"Clear entry into shopping","textPreview":"Clear entry into shopping","textChars":25,"textLines":1,"bbox":[910,466,490,40]}
+{"kind":"shape","id":"sh/obm1ozu5","slide":7,"bbox":[910,508,520,0]}
+{"kind":"textbox","id":"sh/3adkvudk","slide":7,"text":"LENSIFY / PROJECT WALKTHROUGH","textPreview":"LENSIFY / PROJECT WALKTHROUGH","textChars":29,"textLines":1,"bbox":[72,676,420,18]}
+{"kind":"textbox","id":"sh/2p4jmpcz","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1180,676,28,18]}
+{"kind":"image","id":"im/gbypczup","slide":7,"name":"","geometry":"roundRect","alt":"Lensify campaign banner","bbox":[72,280,700,300]}
+{"kind":"notes","id":"nt/0rq0j8","slide":7,"text":"The homepage leads with brand and campaign before asking the user to browse. The visual rhythm gives the catalogue a point of view."}
+{"kind":"slide","id":"sl/cq74rw","slide":8,"title":"07 / STRUCTURE","textShapes":18}
+{"kind":"textbox","id":"sh/e58filsv","slide":8,"text":"07 / STRUCTURE","textPreview":"07 / STRUCTURE","textChars":14,"textLines":1,"bbox":[72,52,500,20]}
+{"kind":"textbox","id":"sh/1szed0r6","slide":8,"text":"Navigation and information architecture","textPreview":"Navigation and information architecture","textChars":39,"textLines":1,"bbox":[72,88,1050,72]}
+{"kind":"textbox","id":"sh/0rqxkval","slide":8,"text":"The route model follows how people think about shopping","textPreview":"The route model follows how people think about shopping","textChars":55,"textLines":1,"bbox":[74,170,900,42]}
+{"kind":"shape","id":"sh/r2xw7qt4","slide":8,"bbox":[72,226,1136,0]}
+{"kind":"shape","id":"sh/q1ofelsj","slide":8,"bbox":[80,330,150,76]}
+{"kind":"textbox","id":"sh/d4ze9gba","slide":8,"text":"Home","textPreview":"Home","textChars":4,"textLines":1,"bbox":[96,346,120,24]}
+{"kind":"textbox","id":"sh/s3qxgvap","slide":8,"text":"index.php","textPreview":"index.php","textChars":9,"textLines":1,"bbox":[96,378,120,16]}
+{"kind":"shape","id":"sh/3yxw36t8","slide":8,"bbox":[230,368,40,0]}
+{"kind":"shape","id":"sh/ixova1sn","slide":8,"bbox":[270,330,150,76]}
+{"kind":"textbox","id":"sh/4jil4zq5","slide":8,"text":"Shop","textPreview":"Shop","textChars":4,"textLines":1,"bbox":[286,346,120,24]}
+{"kind":"textbox","id":"sh/pkrmdk7q","slide":8,"text":"shop.php","textPreview":"shop.php","textChars":8,"textLines":1,"bbox":[286,378,120,16]}
+{"kind":"shape","id":"sh/2x032p8z","slide":8,"bbox":[420,368,40,0]}
+{"kind":"shape","id":"sh/3y94bupk","slide":8,"bbox":[460,330,150,76]}
+{"kind":"textbox","id":"sh/gvil0fqt","slide":8,"text":"Product","textPreview":"Product","textChars":7,"textLines":1,"bbox":[476,346,120,24]}
+{"kind":"textbox","id":"sh/hwrm9k7e","slide":8,"text":"product.php","textPreview":"product.php","textChars":11,"textLines":1,"bbox":[476,378,120,16]}
+{"kind":"shape","id":"sh/utg3y58n","slide":8,"bbox":[610,368,40,0]}
+{"kind":"shape","id":"sh/vupk7ap8","slide":8,"bbox":[650,330,150,76]}
+{"kind":"textbox","id":"sh/0r2lcjqd","slide":8,"text":"Bag","textPreview":"Bag","textChars":3,"textLines":1,"bbox":[666,346,120,24]}
+{"kind":"textbox","id":"sh/1sbmlo7i","slide":8,"text":"cart.php","textPreview":"cart.php","textChars":8,"textLines":1,"bbox":[666,378,120,16]}
+{"kind":"shape","id":"sh/987m54z2","slide":8,"bbox":[800,368,40,0]}
+{"kind":"shape","id":"sh/87ylwzih","slide":8,"bbox":[840,330,150,76]}
+{"kind":"textbox","id":"sh/n6p43ehw","slide":8,"text":"Checkout","textPreview":"Checkout","textChars":8,"textLines":1,"bbox":[856,346,120,24]}
+{"kind":"textbox","id":"sh/m5g3u90b","slide":8,"text":"checkout.php","textPreview":"checkout.php","textChars":12,"textLines":1,"bbox":[856,378,120,16]}
+{"kind":"shape","id":"sh/l47214zq","slide":8,"bbox":[990,368,40,0]}
+{"kind":"shape","id":"sh/0jylszi5","slide":8,"bbox":[1030,330,150,76]}
+{"kind":"textbox","id":"sh/zipkzuhk","slide":8,"text":"Account","textPreview":"Account","textChars":7,"textLines":1,"bbox":[1046,346,120,24]}
+{"kind":"textbox","id":"sh/yhw3qp0z","slide":8,"text":"account.php","textPreview":"account.php","textChars":11,"textLines":1,"bbox":[1046,378,120,16]}
+{"kind":"textbox","id":"sh/dgn2xkzu","slide":8,"text":"The same information architecture supports desktop navigation and a compact mobile menu.","textPreview":"The same information architecture supports desktop navigation and a compact mobile menu.","textChars":88,"textLines":1,"bbox":[72,510,930,40]}
+{"kind":"textbox","id":"sh/cfelofi9","slide":8,"text":"LENSIFY / PROJECT WALKTHROUGH","textPreview":"LENSIFY / PROJECT WALKTHROUGH","textChars":29,"textLines":1,"bbox":[72,676,420,18]}
+{"kind":"textbox","id":"sh/i9sri1cv","slide":8,"text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1180,676,28,18]}
+{"kind":"notes","id":"nt/cq74rw","slide":8,"text":"The customer-facing routes are intentionally legible. The main flow stays close to the user mental model: home, shop, product, bag, checkout and account."}
+{"kind":"slide","id":"sl/anmzky","slide":9,"title":"08 / DISCOVERY","textShapes":12}
+{"kind":"textbox","id":"sh/2pkva58j","slide":9,"text":"08 / DISCOVERY","textPreview":"08 / DISCOVERY","textChars":14,"textLines":1,"bbox":[72,52,500,20]}
+{"kind":"textbox","id":"sh/psbulk7a","slide":9,"text":"Shop: browse the catalogue","textPreview":"Shop: browse the catalogue","textChars":26,"textLines":1,"bbox":[72,88,1050,72]}
+{"kind":"textbox","id":"sh/or2dcfqp","slide":9,"text":"Search, filtering and sorting turn a large catalogue into a short list","textPreview":"Search, filtering and sorting turn a large catalogue into a short list","textChars":70,"textLines":1,"bbox":[74,170,900,42]}
+{"kind":"shape","id":"sh/fmtcfaps","slide":9,"bbox":[72,226,1136,0]}
+{"kind":"shape","id":"sh/gn2d8fqd","slide":9,"bbox":[720,284,440,280]}
+{"kind":"textbox","id":"sh/zidwrupc","slide":9,"text":"DISCOVERY CONTROLS","textPreview":"DISCOVERY CONTROLS","textChars":18,"textLines":1,"bbox":[754,314,300,20]}
+{"kind":"textbox","id":"sh/yh4vipor","slide":9,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[754,360,42,28]}
+{"kind":"textbox","id":"sh/wzax8fe9","slide":9,"text":"Search by intent","textPreview":"Search by intent","textChars":16,"textLines":1,"bbox":[812,358,490,40]}
+{"kind":"shape","id":"sh/h0je1kvu","slide":9,"bbox":[812,400,520,0]}
+{"kind":"textbox","id":"sh/uxsf65wj","slide":9,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[754,420,42,28]}
+{"kind":"textbox","id":"sh/vy1wzad4","slide":9,"text":"Filter by category or brand","textPreview":"Filter by category or brand","textChars":27,"textLines":1,"bbox":[812,418,490,40]}
+{"kind":"shape","id":"sh/8vqx4fed","slide":9,"bbox":[812,460,520,0]}
+{"kind":"textbox","id":"sh/9wzexkvy","slide":9,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[754,480,42,28]}
+{"kind":"textbox","id":"sh/mt8v25w7","slide":9,"text":"Sort the result set","textPreview":"Sort the result set","textChars":19,"textLines":1,"bbox":[812,478,490,40]}
+{"kind":"shape","id":"sh/7uhwvads","slide":9,"bbox":[812,520,520,0]}
+{"kind":"textbox","id":"sh/krqd0ve1","slide":9,"text":"LENSIFY / PROJECT WALKTHROUGH","textPreview":"LENSIFY / PROJECT WALKTHROUGH","textChars":29,"textLines":1,"bbox":[72,676,420,18]}
+{"kind":"textbox","id":"sh/lszet0vm","slide":9,"text":"09","textPreview":"09","textChars":2,"textLines":1,"bbox":[1180,676,28,18]}
+{"kind":"image","id":"im/bel8zatg","slide":9,"name":"","geometry":"roundRect","alt":"Catalogue product","bbox":[72,284,280,280]}
+{"kind":"image","id":"im/cfu9sfa1","slide":9,"name":"","geometry":"roundRect","alt":"Catalogue product","bbox":[372,284,280,280]}
+{"kind":"notes","id":"nt/anmzky","slide":9,"text":"The catalogue is designed for progressive narrowing. Search helps users state intent, while filters and sorting help them refine without losing context."}
+{"kind":"slide","id":"sl/ax5fhs","slide":10,"title":"09 / DISCOVERY","textShapes":12}
+{"kind":"textbox","id":"sh/3ytwbe1s","slide":10,"text":"09 / DISCOVERY","textPreview":"09 / DISCOVERY","textChars":14,"textLines":1,"bbox":[72,52,500,20]}
+{"kind":"textbox","id":"sh/oz2xkjix","slide":10,"text":"Search and suggestions","textPreview":"Search and suggestions","textChars":22,"textLines":1,"bbox":[72,88,1050,72]}
+{"kind":"textbox","id":"sh/p0bedoji","slide":10,"text":"A small interaction that keeps the user moving","textPreview":"A small interaction that keeps the user moving","textChars":46,"textLines":1,"bbox":[74,170,900,42]}
+{"kind":"shape","id":"sh/e90ve9kv","slide":10,"bbox":[72,226,1136,0]}
+{"kind":"shape","id":"sh/fatw7e1g","slide":10,"bbox":[100,330,280,110]}
+{"kind":"textbox","id":"sh/gb2xgzi1","slide":10,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[120,348,42,20]}
+{"kind":"textbox","id":"sh/1cbe94jm","slide":10,"text":"Query entered","textPreview":"Query entered","textChars":13,"textLines":1,"bbox":[120,388,220,28]}
+{"kind":"shape","id":"sh/650vapkz","slide":10,"bbox":[380,384,80,0]}
+{"kind":"shape","id":"sh/r69w3u1k","slide":10,"bbox":[460,330,280,110]}
+{"kind":"textbox","id":"sh/bid83i9o","slide":10,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[480,348,42,20]}
+{"kind":"textbox","id":"sh/qh4rax83","slide":10,"text":"Suggestions appear","textPreview":"Suggestions appear","textChars":18,"textLines":1,"bbox":[480,388,220,28]}
+{"kind":"shape","id":"sh/d4vq5sre","slide":10,"bbox":[740,384,80,0]}
+{"kind":"shape","id":"sh/cjm9cnq9","slide":10,"bbox":[820,330,280,110]}
+{"kind":"textbox","id":"sh/z6x8729k","slide":10,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[840,348,42,20]}
+{"kind":"textbox","id":"sh/y54rex8z","slide":10,"text":"Result selected","textPreview":"Result selected","textChars":15,"textLines":1,"bbox":[840,388,220,28]}
+{"kind":"textbox","id":"sh/l8fq9crq","slide":10,"text":"The interface uses fast feedback to reduce dead ends.","textPreview":"The interface uses fast feedback to reduce dead ends.","textChars":53,"textLines":1,"bbox":[100,520,760,34]}
+{"kind":"textbox","id":"sh/0769g7q5","slide":10,"text":"LENSIFY / PROJECT WALKTHROUGH","textPreview":"LENSIFY / PROJECT WALKTHROUGH","textChars":29,"textLines":1,"bbox":[72,676,420,18]}
+{"kind":"textbox","id":"sh/fat8vy9g","slide":10,"text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[1180,676,28,18]}
+{"kind":"notes","id":"nt/ax5fhs","slide":10,"text":"Search suggestions make discovery feel responsive before a full results page loads. That short feedback loop matters when the catalogue is visual and comparison-driven."}
+{"kind":"slide","id":"sl/7b5dh5","slide":11,"title":"10 / CONFIDENCE","textShapes":8}
+{"kind":"textbox","id":"sh/belwbyl8","slide":11,"text":"10 / CONFIDENCE","textPreview":"10 / CONFIDENCE","textChars":15,"textLines":1,"bbox":[72,52,500,20]}
+{"kind":"textbox","id":"sh/cfud432t","slide":11,"text":"Product detail page","textPreview":"Product detail page","textChars":19,"textLines":1,"bbox":[72,88,1050,72]}
+{"kind":"textbox","id":"sh/xg3ed83e","slide":11,"text":"The decision screen combines desire with enough information to act","textPreview":"The decision screen combines desire with enough information to act","textChars":66,"textLines":1,"bbox":[74,170,900,42]}
+{"kind":"shape","id":"sh/29svytkr","slide":11,"bbox":[72,226,1136,0]}
+{"kind":"shape","id":"sh/obud032x","slide":11,"bbox":[500,270,660,330]}
+{"kind":"textbox","id":"sh/pc3e983i","slide":11,"text":"PRODUCT DETAIL","textPreview":"PRODUCT DETAIL","textChars":14,"textLines":1,"bbox":[536,306,300,20]}
+{"kind":"textbox","id":"sh/m5wvadkv","slide":11,"text":"Frame story\nPrice and availability\nDetails and reviews\nAdd to bag","textPreview":"Frame story | Price and availability | Details and reviews | Add to bag","textChars":65,"textLines":4,"bbox":[536,350,420,160]}
+{"kind":"shape","id":"sh/765wjilg","slide":11,"bbox":[536,548,150,30]}
+{"kind":"textbox","id":"sh/7ah4n6p4","slide":11,"text":"DECISION SUPPORT","textPreview":"DECISION SUPPORT","textChars":16,"textLines":1,"bbox":[548,555,126,14]}
+{"kind":"textbox","id":"sh/6983u1oj","slide":11,"text":"LENSIFY / PROJECT WALKTHROUGH","textPreview":"LENSIFY / PROJECT WALKTHROUGH","textChars":29,"textLines":1,"bbox":[72,676,420,18]}
+{"kind":"textbox","id":"sh/twzmpg7a","slide":11,"text":"11","textPreview":"11","textChars":2,"textLines":1,"bbox":[1180,676,28,18]}
+{"kind":"image","id":"im/2psfup43","slide":11,"name":"","geometry":"roundRect","alt":"Product detail image","bbox":[72,270,360,330]}
+{"kind":"notes","id":"nt/7b5dh5","slide":11,"text":"The product page is where the visual promise becomes a purchase decision. Lensify keeps the frame prominent while giving the buyer the information needed to proceed."}
+{"kind":"slide","id":"sl/x1k37b","slide":12,"title":"11 / CHOICE","textShapes":16}
+{"kind":"textbox","id":"sh/2p8ryx4b","slide":12,"text":"11 / CHOICE","textPreview":"11 / CHOICE","textChars":11,"textLines":1,"bbox":[72,52,500,20]}
+{"kind":"textbox","id":"sh/psza9cn2","slide":12,"text":"Lens-type selection","textPreview":"Lens-type selection","textChars":19,"textLines":1,"bbox":[72,88,1050,72]}
+{"kind":"textbox","id":"sh/orq907mh","slide":12,"text":"Lens choice turns product interest into a configured order","textPreview":"Lens choice turns product interest into a configured order","textChars":58,"textLines":1,"bbox":[74,170,900,42]}
+{"kind":"shape","id":"sh/buhsbm58","slide":12,"bbox":[72,226,1136,0]}
+{"kind":"textbox","id":"sh/at8r2h4n","slide":12,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[72,290,42,28]}
+{"kind":"textbox","id":"sh/xgzadwny","slide":12,"text":"Select the frame","textPreview":"Select the frame","textChars":16,"textLines":1,"bbox":[130,288,490,40]}
+{"kind":"shape","id":"sh/cvq94rmd","slide":12,"bbox":[130,330,520,0]}
+{"kind":"textbox","id":"sh/ryx8zi5o","slide":12,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[72,358,42,28]}
+{"kind":"textbox","id":"sh/qx4rqd43","slide":12,"text":"Choose lens type","textPreview":"Choose lens type","textChars":16,"textLines":1,"bbox":[130,356,490,40]}
+{"kind":"shape","id":"sh/4rqp8rml","slide":12,"bbox":[130,398,520,0]}
+{"kind":"textbox","id":"sh/5sjq1w3q","slide":12,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[72,426,42,28]}
+{"kind":"textbox","id":"sh/i5876h4f","slide":12,"text":"Confirm the configured item","textPreview":"Confirm the configured item","textChars":27,"textLines":1,"bbox":[130,424,490,40]}
+{"kind":"shape","id":"sh/36hozml0","slide":12,"bbox":[130,466,520,0]}
+{"kind":"textbox","id":"sh/svapcbmh","slide":12,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[72,494,42,28]}
+{"kind":"textbox","id":"sh/dwjq5w32","slide":12,"text":"Add to bag","textPreview":"Add to bag","textChars":10,"textLines":1,"bbox":[130,492,490,40]}
+{"kind":"shape","id":"sh/qts7a14b","slide":12,"bbox":[130,534,520,0]}
+{"kind":"shape","id":"sh/ru1836lw","slide":12,"bbox":[760,286,400,286]}
+{"kind":"textbox","id":"sh/8z6p07md","slide":12,"text":"FRAME","textPreview":"FRAME","textChars":5,"textLines":1,"bbox":[810,326,150,22]}
+{"kind":"textbox","id":"sh/t0z6tc3y","slide":12,"text":"Lens type","textPreview":"Lens type","textChars":9,"textLines":1,"bbox":[810,374,260,34]}
+{"kind":"shape","id":"sh/pk7eh4ra","slide":12,"bbox":[810,432,260,0]}
+{"kind":"textbox","id":"sh/ojyd8zap","slide":12,"text":"A focused step keeps the configuration visible before checkout.","textPreview":"A focused step keeps the configuration visible before checkout.","textChars":63,"textLines":1,"bbox":[810,466,280,66]}
+{"kind":"textbox","id":"sh/ni5wfu94","slide":12,"text":"LENSIFY / PROJECT WALKTHROUGH","textPreview":"LENSIFY / PROJECT WALKTHROUGH","textChars":29,"textLines":1,"bbox":[72,676,420,18]}
+{"kind":"textbox","id":"sh/2hwv69sz","slide":12,"text":"12","textPreview":"12","textChars":2,"textLines":1,"bbox":[1180,676,28,18]}
+{"kind":"notes","id":"nt/x1k37b","slide":12,"text":"This is a small but important product rule. The customer selects the frame first, then the lens type, so the configured line item remains understandable in the bag."}
+{"kind":"slide","id":"sl/l15p1t","slide":13,"title":"12 / RETENTION","textShapes":8}
+{"kind":"textbox","id":"sh/721ojilo","slide":13,"text":"12 / RETENTION","textPreview":"12 / RETENTION","textChars":14,"textLines":1,"bbox":[72,52,500,20]}
+{"kind":"textbox","id":"sh/s3a5sn2t","slide":13,"text":"Saved frames and wishlist","textPreview":"Saved frames and wishlist","textChars":25,"textLines":1,"bbox":[72,88,1050,72]}
+{"kind":"textbox","id":"sh/t4j6ls3e","slide":13,"text":"A saved frame gives the customer a reason to return","textPreview":"A saved frame gives the customer a reason to return","textChars":51,"textLines":1,"bbox":[74,170,900,42]}
+{"kind":"shape","id":"sh/u5snuxkz","slide":13,"bbox":[72,226,1136,0]}
+{"kind":"shape","id":"sh/g7u5wn25","slide":13,"bbox":[390,284,770,270]}
+{"kind":"textbox","id":"sh/h836ps3q","slide":13,"text":"SAVED FRAMES","textPreview":"SAVED FRAMES","textChars":12,"textLines":1,"bbox":[430,320,300,20]}
+{"kind":"textbox","id":"sh/a98nitkv","slide":13,"text":"The user can keep a shortlist\nwithout rebuilding the search.","textPreview":"The user can keep a shortlist | without rebuilding the search.","textChars":60,"textLines":2,"bbox":[430,366,480,82]}
+{"kind":"shape","id":"sh/vah4bylg","slide":13,"bbox":[430,500,150,30]}
+{"kind":"textbox","id":"sh/fqlg3q9o","slide":13,"text":"ACCOUNT-LINKED","textPreview":"ACCOUNT-LINKED","textChars":14,"textLines":1,"bbox":[442,507,126,14]}
+{"kind":"textbox","id":"sh/epcfuls3","slide":13,"text":"LENSIFY / PROJECT WALKTHROUGH","textPreview":"LENSIFY / PROJECT WALKTHROUGH","textChars":29,"textLines":1,"bbox":[72,676,420,18]}
+{"kind":"textbox","id":"sh/1s3y5gru","slide":13,"text":"13","textPreview":"13","textChars":2,"textLines":1,"bbox":[1180,676,28,18]}
+{"kind":"image","id":"im/idwze5c7","slide":13,"name":"","geometry":"roundRect","alt":"Saved frame","bbox":[72,284,260,270]}
+{"kind":"notes","id":"nt/l15p1t","slide":13,"text":"Wishlist behavior supports consideration, which matters for eyewear because users often compare styles before deciding. The account area gives that shortlist a home."}
+{"kind":"slide","id":"sl/9mrvmz","slide":14,"title":"13 / BAG","textShapes":9}
+{"kind":"textbox","id":"sh/9o72dkvu","slide":14,"text":"13 / BAG","textPreview":"13 / BAG","textChars":8,"textLines":1,"bbox":[72,52,500,20]}
+{"kind":"textbox","id":"sh/mlw3ipw3","slide":14,"text":"Cart: review before checkout","textPreview":"Cart: review before checkout","textChars":28,"textLines":1,"bbox":[72,88,1050,72]}
+{"kind":"textbox","id":"sh/nm5kbado","slide":14,"text":"The bag is a confidence checkpoint, not just a total","textPreview":"The bag is a confidence checkpoint, not just a total","textChars":52,"textLines":1,"bbox":[74,170,900,42]}
+{"kind":"shape","id":"sh/wbyloze5","slide":14,"bbox":[72,226,1136,0]}
+{"kind":"shape","id":"sh/xc72h4vq","slide":14,"bbox":[72,286,620,276]}
+{"kind":"textbox","id":"sh/apg3mpwf","slide":14,"text":"BAG SUMMARY","textPreview":"BAG SUMMARY","textChars":11,"textLines":1,"bbox":[110,320,260,20]}
+{"kind":"textbox","id":"sh/bqpkfudk","slide":14,"text":"Frame\nLens type\nQuantity\nSubtotal\nDelivery","textPreview":"Frame | Lens type | Quantity | Subtotal | Delivery","textChars":42,"textLines":5,"bbox":[110,366,260,130]}
+{"kind":"shape","id":"sh/cfu1cve1","slide":14,"bbox":[430,352,200,0]}
+{"kind":"textbox","id":"sh/dgn250vm","slide":14,"text":"Review the line item\nbefore committing.","textPreview":"Review the line item | before committing.","textChars":39,"textLines":2,"bbox":[760,322,340,76]}
+{"kind":"shape","id":"sh/hsrq9wza","slide":14,"bbox":[760,492,150,30]}
+{"kind":"textbox","id":"sh/wri90rip","slide":14,"text":"SESSION BAG","textPreview":"SESSION BAG","textChars":11,"textLines":1,"bbox":[772,499,126,14]}
+{"kind":"textbox","id":"sh/v6987mh4","slide":14,"text":"LENSIFY / PROJECT WALKTHROUGH","textPreview":"LENSIFY / PROJECT WALKTHROUGH","textChars":29,"textLines":1,"bbox":[72,676,420,18]}
+{"kind":"textbox","id":"sh/u50ryh0j","slide":14,"text":"14","textPreview":"14","textChars":2,"textLines":1,"bbox":[1180,676,28,18]}
+{"kind":"notes","id":"nt/9mrvmz","slide":14,"text":"The cart makes the configured item legible before checkout. That is especially useful when a single product has a frame choice and lens choice attached to it."}
+{"kind":"slide","id":"sl/01i2c2","slide":15,"title":"14 / CONVERSION","textShapes":15}
+{"kind":"textbox","id":"sh/xg36d8je","slide":15,"text":"14 / CONVERSION","textPreview":"14 / CONVERSION","textChars":15,"textLines":1,"bbox":[72,52,500,20]}
+{"kind":"textbox","id":"sh/adcn2d0n","slide":15,"text":"Checkout experience","textPreview":"Checkout experience","textChars":19,"textLines":1,"bbox":[72,88,1050,72]}
+{"kind":"textbox","id":"sh/velobi18","slide":15,"text":"A step-by-step flow reduces last-minute uncertainty","textPreview":"A step-by-step flow reduces last-minute uncertainty","textChars":51,"textLines":1,"bbox":[74,170,900,42]}
+{"kind":"shape","id":"sh/k3u58nip","slide":15,"bbox":[72,226,1136,0]}
+{"kind":"shape","id":"sh/54n6hsja","slide":15,"bbox":[72,294,360,48]}
+{"kind":"textbox","id":"sh/i1cn6d0z","slide":15,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[92,308,36,18]}
+{"kind":"textbox","id":"sh/j2lofi14","slide":15,"text":"Delivery address","textPreview":"Delivery address","textChars":16,"textLines":1,"bbox":[146,307,240,22]}
+{"kind":"shape","id":"sh/s7e5c7i1","slide":15,"bbox":[252,342,0,0]}
+{"kind":"shape","id":"sh/t8n6lcjm","slide":15,"bbox":[72,364,360,48]}
+{"kind":"textbox","id":"sh/1cne1s7a","slide":15,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[92,378,36,18]}
+{"kind":"textbox","id":"sh/0bexsn6p","slide":15,"text":"Order review","textPreview":"Order review","textChars":12,"textLines":1,"bbox":[146,377,240,22]}
+{"kind":"shape","id":"sh/za5wzip4","slide":15,"bbox":[252,412,0,0]}
+{"kind":"shape","id":"sh/e9wfqdoj","slide":15,"bbox":[72,434,360,48]}
+{"kind":"textbox","id":"sh/907e5s76","slide":15,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[92,448,36,18]}
+{"kind":"textbox","id":"sh/ozyxwn6l","slide":15,"text":"Payment state","textPreview":"Payment state","textChars":13,"textLines":1,"bbox":[146,447,240,22]}
+{"kind":"shape","id":"sh/ny5w32p0","slide":15,"bbox":[252,482,0,0]}
+{"kind":"shape","id":"sh/mdwfuxof","slide":15,"bbox":[72,504,360,48]}
+{"kind":"textbox","id":"sh/p43et872","slide":15,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[92,518,36,18]}
+{"kind":"textbox","id":"sh/43udk36h","slide":15,"text":"Confirmation","textPreview":"Confirmation","textChars":12,"textLines":1,"bbox":[146,517,240,22]}
+{"kind":"shape","id":"sh/gnyx03ed","slide":15,"bbox":[560,294,600,258]}
+{"kind":"textbox","id":"sh/ho7e98fy","slide":15,"text":"Checkout keeps the next decision visible.","textPreview":"Checkout keeps the next decision visible.","textChars":41,"textLines":1,"bbox":[610,340,480,80]}
+{"kind":"textbox","id":"sh/ulgfytw7","slide":15,"text":"Address, delivery and payment states stay within one clear sequence.","textPreview":"Address, delivery and payment states stay within one clear sequence.","textChars":68,"textLines":1,"bbox":[610,448,440,52]}
+{"kind":"textbox","id":"sh/vmpw7yxs","slide":15,"text":"LENSIFY / PROJECT WALKTHROUGH","textPreview":"LENSIFY / PROJECT WALKTHROUGH","textChars":29,"textLines":1,"bbox":[72,676,420,18]}
+{"kind":"textbox","id":"sh/4ryx4ne9","slide":15,"text":"15","textPreview":"15","textChars":2,"textLines":1,"bbox":[1180,676,28,18]}
+{"kind":"notes","id":"nt/01i2c2","slide":15,"text":"Checkout follows a sequence that users can understand at a glance. The interface separates delivery details from the order review so the final action feels deliberate."}
+{"kind":"slide","id":"sl/mgg060","slide":16,"title":"15 / PRODUCT TRUTH","textShapes":10}
+{"kind":"textbox","id":"sh/p0n6pwve","slide":16,"text":"15 / PRODUCT TRUTH","textPreview":"15 / PRODUCT TRUTH","textChars":18,"textLines":1,"bbox":[72,52,500,20]}
+{"kind":"textbox","id":"sh/2xcnehwn","slide":16,"text":"Payment state and honest boundaries","textPreview":"Payment state and honest boundaries","textChars":35,"textLines":1,"bbox":[72,88,1050,72]}
+{"kind":"textbox","id":"sh/3y5onmd8","slide":16,"text":"The build makes the current payment boundary visible","textPreview":"The build makes the current payment boundary visible","textChars":52,"textLines":1,"bbox":[74,170,900,42]}
+{"kind":"shape","id":"sh/gvu5crex","slide":16,"bbox":[72,226,1136,0]}
+{"kind":"shape","id":"sh/hw36lwvi","slide":16,"bbox":[72,290,480,240]}
+{"kind":"shape","id":"sh/utcnahwr","slide":16,"bbox":[104,320,150,30]}
+{"kind":"textbox","id":"sh/fulojmdc","slide":16,"text":"IMPLEMENTED","textPreview":"IMPLEMENTED","textChars":11,"textLines":1,"bbox":[116,327,126,14]}
+{"kind":"textbox","id":"sh/0rypobe1","slide":16,"text":"Order creation\nConfirmation state\nAdmin notification","textPreview":"Order creation | Confirmation state | Admin notification","textChars":52,"textLines":3,"bbox":[104,378,330,100]}
+{"kind":"shape","id":"sh/1s76xgvm","slide":16,"bbox":[640,290,520,240]}
+{"kind":"shape","id":"sh/5ob2l0nu","slide":16,"bbox":[672,320,150,30]}
+{"kind":"textbox","id":"sh/4n21svm9","slide":16,"text":"NEXT INTEGRATION","textPreview":"NEXT INTEGRATION","textChars":16,"textLines":1,"bbox":[684,327,126,14]}
+{"kind":"textbox","id":"sh/jmtkja5o","slide":16,"text":"UPI, wallet and card\ngateway + webhook","textPreview":"UPI, wallet and card | gateway + webhook","textChars":38,"textLines":2,"bbox":[672,378,400,76]}
+{"kind":"textbox","id":"sh/ilkjq543","slide":16,"text":"A transparent boundary protects trust while the product is still in development.","textPreview":"A transparent boundary protects trust while the product is still in development.","textChars":80,"textLines":1,"bbox":[72,584,900,30]}
+{"kind":"textbox","id":"sh/hkb2h0ni","slide":16,"text":"LENSIFY / PROJECT WALKTHROUGH","textPreview":"LENSIFY / PROJECT WALKTHROUGH","textChars":29,"textLines":1,"bbox":[72,676,420,18]}
+{"kind":"textbox","id":"sh/wj21ovmx","slide":16,"text":"16","textPreview":"16","textChars":2,"textLines":1,"bbox":[1180,676,28,18]}
+{"kind":"notes","id":"nt/mgg060","slide":16,"text":"This slide is intentionally honest. The current build supports the order flow, while live gateway integrations still need to be connected and tested before production."}
+{"kind":"slide","id":"sl/bgn78i","slide":17,"title":"16 / CLOSURE","textShapes":15}
+{"kind":"textbox","id":"sh/fqdcvu1g","slide":17,"text":"16 / CLOSURE","textPreview":"16 / CLOSURE","textChars":12,"textLines":1,"bbox":[72,52,500,20]}
+{"kind":"textbox","id":"sh/0rmt4zi1","slide":17,"text":"Order confirmation","textPreview":"Order confirmation","textChars":18,"textLines":1,"bbox":[72,88,1050,72]}
+{"kind":"textbox","id":"sh/1svux4jm","slide":17,"text":"A clear finish makes the purchase feel complete","textPreview":"A clear finish makes the purchase feel complete","textChars":47,"textLines":1,"bbox":[74,170,900,42]}
+{"kind":"shape","id":"sh/qlkbyp0z","slide":17,"bbox":[72,226,1136,0]}
+{"kind":"shape","id":"sh/rmtcru1k","slide":17,"bbox":[72,286,500,276]}
+{"kind":"textbox","id":"sh/snmt0zip","slide":17,"text":"ORDER CONFIRMED","textPreview":"ORDER CONFIRMED","textChars":15,"textLines":1,"bbox":[116,332,300,20]}
+{"kind":"textbox","id":"sh/dovut4ja","slide":17,"text":"Your order is\non its way.","textPreview":"Your order is | on its way.","textChars":25,"textLines":2,"bbox":[116,382,360,82]}
+{"kind":"textbox","id":"sh/ahovat03","slide":17,"text":"Order number\nNext action","textPreview":"Order number | Next action","textChars":24,"textLines":2,"bbox":[116,496,240,42]}
+{"kind":"shape","id":"sh/bixc3yho","slide":17,"bbox":[650,286,510,276]}
+{"kind":"textbox","id":"sh/jut0zeh4","slide":17,"text":"POST-PURCHASE","textPreview":"POST-PURCHASE","textChars":13,"textLines":1,"bbox":[694,330,240,20]}
+{"kind":"textbox","id":"sh/itkjq9gj","slide":17,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[694,372,42,28]}
+{"kind":"textbox","id":"sh/5wbi1ozu","slide":17,"text":"View order","textPreview":"View order","textChars":10,"textLines":1,"bbox":[752,370,490,40]}
+{"kind":"shape","id":"sh/kv21sjyp","slide":17,"bbox":[752,412,520,0]}
+{"kind":"textbox","id":"sh/7yt03eh0","slide":17,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[694,430,42,28]}
+{"kind":"textbox","id":"sh/6xkju9gf","slide":17,"text":"Track status","textPreview":"Track status","textChars":12,"textLines":1,"bbox":[752,428,490,40]}
+{"kind":"shape","id":"sh/t0vi5of6","slide":17,"bbox":[752,470,520,0]}
+{"kind":"textbox","id":"sh/szm1wjyl","slide":17,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[694,488,42,28]}
+{"kind":"textbox","id":"sh/fmdk7yxc","slide":17,"text":"Request return","textPreview":"Request return","textChars":14,"textLines":1,"bbox":[752,486,490,40]}
+{"kind":"shape","id":"sh/u14jytgr","slide":17,"bbox":[752,528,520,0]}
+{"kind":"textbox","id":"sh/qho36x0z","slide":17,"text":"LENSIFY / PROJECT WALKTHROUGH","textPreview":"LENSIFY / PROJECT WALKTHROUGH","textChars":29,"textLines":1,"bbox":[72,676,420,18]}
+{"kind":"textbox","id":"sh/rih4z2hk","slide":17,"text":"17","textPreview":"17","textChars":2,"textLines":1,"bbox":[1180,676,28,18]}
+{"kind":"notes","id":"nt/bgn78i","slide":17,"text":"The confirmation page closes the loop and points the customer to the next useful action. Orders and returns remain available from the account area."}
+{"kind":"slide","id":"sl/7ehl2m","slide":18,"title":"17 / AFTERCARE","textShapes":11}
+{"kind":"textbox","id":"sh/xgrmhsnm","slide":18,"text":"17 / AFTERCARE","textPreview":"17 / AFTERCARE","textChars":14,"textLines":1,"bbox":[72,52,500,20]}
+{"kind":"textbox","id":"sh/ad0nmd4v","slide":18,"text":"Orders, returns and notifications","textPreview":"Orders, returns and notifications","textChars":33,"textLines":1,"bbox":[72,88,1050,72]}
+{"kind":"textbox","id":"sh/be94fi5g","slide":18,"text":"The relationship continues after payment","textPreview":"The relationship continues after payment","textChars":40,"textLines":1,"bbox":[74,170,900,42]}
+{"kind":"shape","id":"sh/k325snmd","slide":18,"bbox":[72,226,1136,0]}
+{"kind":"textbox","id":"sh/l4bmlsni","slide":18,"text":"ORDER LIFECYCLE","textPreview":"ORDER LIFECYCLE","textChars":15,"textLines":1,"bbox":[72,286,260,20]}
+{"kind":"shape","id":"sh/yhknqx47","slide":18,"bbox":[86,348,186,70]}
+{"kind":"textbox","id":"sh/z2t4j25s","slide":18,"text":"Placed","textPreview":"Placed","textChars":6,"textLines":1,"bbox":[104,371,140,24]}
+{"kind":"shape","id":"sh/8725w7m9","slide":18,"bbox":[272,383,84,0]}
+{"kind":"shape","id":"sh/98b6pcnu","slide":18,"bbox":[356,348,186,70]}
+{"kind":"textbox","id":"sh/h8f6hwv6","slide":18,"text":"Processing","textPreview":"Processing","textChars":10,"textLines":1,"bbox":[374,371,140,24]}
+{"kind":"shape","id":"sh/gn6p8rel","slide":18,"bbox":[542,383,84,0]}
+{"kind":"shape","id":"sh/vmdofmd0","slide":18,"bbox":[626,348,186,70]}
+{"kind":"textbox","id":"sh/ul4n6hwv","slide":18,"text":"Shipped","textPreview":"Shipped","textChars":7,"textLines":1,"bbox":[644,371,140,24]}
+{"kind":"shape","id":"sh/5cf6lwvi","slide":18,"bbox":[812,383,84,0]}
+{"kind":"shape","id":"sh/4b6pcrex","slide":18,"bbox":[896,348,186,70]}
+{"kind":"textbox","id":"sh/3axoj6dc","slide":18,"text":"Delivered","textPreview":"Delivered","textChars":9,"textLines":1,"bbox":[914,371,140,24]}
+{"kind":"textbox","id":"sh/i9o7a1wr","slide":18,"text":"Customer status → return request → admin review → notification","textPreview":"Customer status → return request → admin review → notification","textChars":62,"textLines":1,"bbox":[86,500,1000,38]}
+{"kind":"textbox","id":"sh/lgv69cvy","slide":18,"text":"LENSIFY / PROJECT WALKTHROUGH","textPreview":"LENSIFY / PROJECT WALKTHROUGH","textChars":29,"textLines":1,"bbox":[72,676,420,18]}
+{"kind":"textbox","id":"sh/kf2507ed","slide":18,"text":"18","textPreview":"18","textChars":2,"textLines":1,"bbox":[1180,676,28,18]}
+{"kind":"notes","id":"nt/7ehl2m","slide":18,"text":"Orders, returns and notifications turn a one-time transaction into an ongoing service experience. The admin console receives the operational work that follows."}
+{"kind":"slide","id":"sl/xxkbbe","slide":19,"title":"18 / ACCOUNT","textShapes":9}
+{"kind":"textbox","id":"sh/yp4ryts3","slide":19,"text":"18 / ACCOUNT","textPreview":"18 / ACCOUNT","textChars":12,"textLines":1,"bbox":[72,52,500,20]}
+{"kind":"textbox","id":"sh/lsfat8ru","slide":19,"text":"Account area","textPreview":"Account area","textChars":12,"textLines":1,"bbox":[72,88,1050,72]}
+{"kind":"textbox","id":"sh/kr6903a9","slide":19,"text":"One place for the customer’s continuing relationship","textPreview":"One place for the customer’s continuing relationship","textChars":52,"textLines":1,"bbox":[74,170,900,42]}
+{"kind":"shape","id":"sh/bmd8ne9c","slide":19,"bbox":[72,226,1136,0]}
+{"kind":"shape","id":"sh/al4ru9sr","slide":19,"bbox":[72,280,300,300]}
+{"kind":"textbox","id":"sh/xovapori","slide":19,"text":"ACCOUNT","textPreview":"ACCOUNT","textChars":7,"textLines":1,"bbox":[110,320,180,20]}
+{"kind":"textbox","id":"sh/cnm9wjax","slide":19,"text":"Profile\nOrders\nSaved frames\nDelivery address","textPreview":"Profile | Orders | Saved frames | Delivery address","textChars":44,"textLines":4,"bbox":[110,374,200,160]}
+{"kind":"shape","id":"sh/vihszi9w","slide":19,"bbox":[440,280,720,300]}
+{"kind":"textbox","id":"sh/uhor6dsb","slide":19,"text":"The account area gives customers control over the information they reuse.","textPreview":"The account area gives customers control over the information they reuse.","textChars":73,"textLines":1,"bbox":[490,332,570,80]}
+{"kind":"shape","id":"sh/cfq9szqd","slide":19,"bbox":[490,500,150,30]}
+{"kind":"textbox","id":"sh/xgzql4ry","slide":19,"text":"PERSONAL SPACE","textPreview":"PERSONAL SPACE","textChars":14,"textLines":1,"bbox":[502,507,126,14]}
+{"kind":"textbox","id":"sh/ad8rqp87","slide":19,"text":"LENSIFY / PROJECT WALKTHROUGH","textPreview":"LENSIFY / PROJECT WALKTHROUGH","textChars":29,"textLines":1,"bbox":[72,676,420,18]}
+{"kind":"textbox","id":"sh/beh8ju9s","slide":19,"text":"19","textPreview":"19","textChars":2,"textLines":1,"bbox":[1180,676,28,18]}
+{"kind":"notes","id":"nt/xxkbbe","slide":19,"text":"The account area is intentionally practical. It collects profile information, order history, saved frames and delivery details in one predictable navigation model."}
+{"kind":"slide","id":"sl/3itf2b","slide":20,"title":"19 / SUPPORT","textShapes":9}
+{"kind":"textbox","id":"sh/cjup4zix","slide":20,"text":"19 / SUPPORT","textPreview":"19 / SUPPORT","textChars":12,"textLines":1,"bbox":[72,52,500,20]}
+{"kind":"textbox","id":"sh/bil8be1s","slide":20,"text":"Contact and support","textPreview":"Contact and support","textChars":19,"textLines":1,"bbox":[72,88,1050,72]}
+{"kind":"textbox","id":"sh/ahc72907","slide":20,"text":"Customer messages become visible work for the operator","textPreview":"Customer messages become visible work for the operator","textChars":54,"textLines":1,"bbox":[74,170,900,42]}
+{"kind":"shape","id":"sh/pg3q94jm","slide":20,"bbox":[72,226,1136,0]}
+{"kind":"shape","id":"sh/ofup0zi1","slide":20,"bbox":[72,300,310,100]}
+{"kind":"textbox","id":"sh/nelo7u1g","slide":20,"text":"Customer message","textPreview":"Customer message","textChars":16,"textLines":1,"bbox":[100,336,240,24]}
+{"kind":"shape","id":"sh/2dc7yp0v","slide":20,"bbox":[382,350,120,0]}
+{"kind":"shape","id":"sh/1cj65kja","slide":20,"bbox":[520,300,310,100]}
+{"kind":"textbox","id":"sh/0rapwfip","slide":20,"text":"Admin notification","textPreview":"Admin notification","textChars":18,"textLines":1,"bbox":[548,336,240,24]}
+{"kind":"shape","id":"sh/axoz25kv","slide":20,"bbox":[830,350,120,0]}
+{"kind":"shape","id":"sh/vyh0balg","slide":20,"bbox":[968,300,192,100]}
+{"kind":"textbox","id":"sh/wzqh4f21","slide":20,"text":"Action","textPreview":"Action","textChars":6,"textLines":1,"bbox":[1000,336,120,24]}
+{"kind":"textbox","id":"sh/x0zidk3m","slide":20,"text":"The support flow keeps communication connected to the back office.","textPreview":"The support flow keeps communication connected to the back office.","textChars":66,"textLines":1,"bbox":[72,500,800,36]}
+{"kind":"textbox","id":"sh/m9ozylkz","slide":20,"text":"LENSIFY / PROJECT WALKTHROUGH","textPreview":"LENSIFY / PROJECT WALKTHROUGH","textChars":29,"textLines":1,"bbox":[72,676,420,18]}
+{"kind":"textbox","id":"sh/naxg7qlk","slide":20,"text":"20","textPreview":"20","textChars":2,"textLines":1,"bbox":[1180,676,28,18]}
+{"kind":"notes","id":"nt/3itf2b","slide":20,"text":"The contact route is not isolated from operations. A customer message can create an admin notification, giving the team a clear place to respond."}
+{"kind":"slide","id":"sl/ufkbyd","slide":21,"title":"LENSIFY ADMIN","textShapes":6}
+{"kind":"textbox","id":"sh/zu9oj6xk","slide":21,"text":"LENSIFY ADMIN","textPreview":"LENSIFY ADMIN","textChars":13,"textLines":1,"bbox":[72,72,360,24]}
+{"kind":"textbox","id":"sh/kvi5cre5","slide":21,"text":"Operational\ncontrol.","textPreview":"Operational | control.","textChars":20,"textLines":2,"bbox":[72,192,620,140]}
+{"kind":"textbox","id":"sh/lwr6lwvq","slide":21,"text":"Now we move behind the storefront, where catalogue, orders and customer signals become manageable work.","textPreview":"Now we move behind the storefront, where catalogue, orders and customer signals become manageable work.","textChars":103,"textLines":1,"bbox":[76,396,540,82]}
+{"kind":"shape","id":"sh/a5gn6hw3","slide":21,"bbox":[76,548,150,30]}
+{"kind":"textbox","id":"sh/b6pofmxo","slide":21,"text":"CHAPTER 02","textPreview":"CHAPTER 02","textChars":10,"textLines":1,"bbox":[88,555,126,14]}
+{"kind":"textbox","id":"sh/c7y58re9","slide":21,"text":"LENSIFY / ADMIN CONSOLE","textPreview":"LENSIFY / ADMIN CONSOLE","textChars":23,"textLines":1,"bbox":[72,676,420,18]}
+{"kind":"textbox","id":"sh/xs76hwfu","slide":21,"text":"21","textPreview":"21","textChars":2,"textLines":1,"bbox":[1180,676,28,18]}
+{"kind":"notes","id":"nt/ufkbyd","slide":21,"text":"This is the chapter break. The storefront helps a customer choose; the admin console helps the business run the system after that choice."}
+{"kind":"slide","id":"sl/1zml98","slide":22,"title":"20 / ADMIN","textShapes":11}
+{"kind":"textbox","id":"sh/retgne1k","slide":22,"text":"20 / ADMIN","textPreview":"20 / ADMIN","textChars":10,"textLines":1,"bbox":[72,52,500,20]}
+{"kind":"textbox","id":"sh/cf2hgzi5","slide":22,"text":"Admin dashboard","textPreview":"Admin dashboard","textChars":15,"textLines":1,"bbox":[72,88,1050,72]}
+{"kind":"textbox","id":"sh/dgbyp4zq","slide":22,"text":"A quick overview of what needs attention","textPreview":"A quick overview of what needs attention","textChars":40,"textLines":1,"bbox":[74,170,900,42]}
+{"kind":"shape","id":"sh/290fap03","slide":22,"bbox":[72,226,1136,0]}
+{"kind":"shape","id":"sh/3a9gju1o","slide":22,"bbox":[72,286,230,112]}
+{"kind":"textbox","id":"sh/4b2hczi9","slide":22,"text":"ORDERS","textPreview":"ORDERS","textChars":6,"textLines":1,"bbox":[100,312,150,18]}
+{"kind":"textbox","id":"sh/pcbyl4je","slide":22,"text":"Overview","textPreview":"Overview","textChars":8,"textLines":1,"bbox":[100,344,150,28]}
+{"kind":"shape","id":"sh/ul0f6p0r","slide":22,"bbox":[332,286,230,112]}
+{"kind":"textbox","id":"sh/v69gfu1c","slide":22,"text":"ACTIVITY","textPreview":"ACTIVITY","textChars":8,"textLines":1,"bbox":[360,312,150,18]}
+{"kind":"textbox","id":"sh/rmhg3q1g","slide":22,"text":"Shortcuts","textPreview":"Shortcuts","textChars":9,"textLines":1,"bbox":[360,344,150,28]}
+{"kind":"shape","id":"sh/q18zulkv","slide":22,"bbox":[592,286,568,270]}
+{"kind":"textbox","id":"sh/dozi50jm","slide":22,"text":"Dashboard composition","textPreview":"Dashboard composition","textChars":21,"textLines":1,"bbox":[632,326,300,28]}
+{"kind":"textbox","id":"sh/cnqhwv21","slide":22,"text":"KPI cards\nRecent activity\nQuick links\nUnread notifications","textPreview":"KPI cards | Recent activity | Quick links | Unread notifications","textChars":58,"textLines":4,"bbox":[632,388,300,120]}
+{"kind":"textbox","id":"sh/zqh07a1c","slide":22,"text":"LENSIFY / PROJECT WALKTHROUGH","textPreview":"LENSIFY / PROJECT WALKTHROUGH","textChars":29,"textLines":1,"bbox":[72,676,420,18]}
+{"kind":"textbox","id":"sh/ep8zy5k7","slide":22,"text":"22","textPreview":"22","textChars":2,"textLines":1,"bbox":[1180,676,28,18]}
+{"kind":"notes","id":"nt/1zml98","slide":22,"text":"The admin dashboard is a starting point rather than a destination. It surfaces the work that deserves attention and routes the operator into the detail screens."}
+{"kind":"slide","id":"sl/0ny76y","slide":23,"title":"21 / CATALOGUE","textShapes":14}
+{"kind":"textbox","id":"sh/3e90fidc","slide":23,"text":"21 / CATALOGUE","textPreview":"21 / CATALOGUE","textChars":14,"textLines":1,"bbox":[72,52,500,20]}
+{"kind":"textbox","id":"sh/ofihonex","slide":23,"text":"Catalogue management","textPreview":"Catalogue management","textChars":20,"textLines":1,"bbox":[72,88,1050,72]}
+{"kind":"textbox","id":"sh/pgbih8vi","slide":23,"text":"Products, variants, categories and brands share one operating model","textPreview":"Products, variants, categories and brands share one operating model","textChars":67,"textLines":1,"bbox":[74,170,900,42]}
+{"kind":"shape","id":"sh/qhkzqdw3","slide":23,"bbox":[72,226,1136,0]}
+{"kind":"shape","id":"sh/bit0jido","slide":23,"bbox":[72,318,244,154]}
+{"kind":"textbox","id":"sh/cj2hsnu9","slide":23,"text":"Products","textPreview":"Products","textChars":8,"textLines":1,"bbox":[94,344,190,24]}
+{"kind":"textbox","id":"sh/d4bilsve","slide":23,"text":"product records","textPreview":"product records","textChars":15,"textLines":1,"bbox":[94,390,190,24]}
+{"kind":"shape","id":"sh/y5kzuxcz","slide":23,"bbox":[354,318,244,154]}
+{"kind":"textbox","id":"sh/z6t0n2dk","slide":23,"text":"Variants","textPreview":"Variants","textChars":8,"textLines":1,"bbox":[376,344,190,24]}
+{"kind":"textbox","id":"sh/3a143q10","slide":23,"text":"options + stock","textPreview":"options + stock","textChars":15,"textLines":1,"bbox":[376,390,190,24]}
+{"kind":"shape","id":"sh/29snu50f","slide":23,"bbox":[636,318,244,154]}
+{"kind":"textbox","id":"sh/pwj650z6","slide":23,"text":"Categories","textPreview":"Categories","textChars":10,"textLines":1,"bbox":[658,344,190,24]}
+{"kind":"textbox","id":"sh/ova5wvil","slide":23,"text":"navigation","textPreview":"navigation","textChars":10,"textLines":1,"bbox":[658,390,190,24]}
+{"kind":"shape","id":"sh/f6h4zq14","slide":23,"bbox":[918,318,244,154]}
+{"kind":"textbox","id":"sh/e58nql0j","slide":23,"text":"Brands","textPreview":"Brands","textChars":6,"textLines":1,"bbox":[940,344,190,24]}
+{"kind":"textbox","id":"sh/18jm10ju","slide":23,"text":"catalogue identity","textPreview":"catalogue identity","textChars":18,"textLines":1,"bbox":[940,390,190,24]}
+{"kind":"textbox","id":"sh/g7q5svip","slide":23,"text":"CRUD screens keep the catalogue maintainable without editing raw data.","textPreview":"CRUD screens keep the catalogue maintainable without editing raw data.","textChars":70,"textLines":1,"bbox":[72,530,900,32]}
+{"kind":"textbox","id":"sh/z2lobah8","slide":23,"text":"LENSIFY / PROJECT WALKTHROUGH","textPreview":"LENSIFY / PROJECT WALKTHROUGH","textChars":29,"textLines":1,"bbox":[72,676,420,18]}
+{"kind":"textbox","id":"sh/y1cn2p0n","slide":23,"text":"23","textPreview":"23","textChars":2,"textLines":1,"bbox":[1180,676,28,18]}
+{"kind":"notes","id":"nt/0ny76y","slide":23,"text":"The catalogue is split into related responsibilities. That keeps product content, variant data and navigation metadata manageable as the project grows."}
+{"kind":"slide","id":"sl/ditd10","slide":24,"title":"22 / INVENTORY","textShapes":11}
+{"kind":"textbox","id":"sh/4japsja5","slide":24,"text":"22 / INVENTORY","textPreview":"22 / INVENTORY","textChars":14,"textLines":1,"bbox":[72,52,500,20]}
+{"kind":"textbox","id":"sh/ji18jetk","slide":24,"text":"Inventory and stock history","textPreview":"Inventory and stock history","textChars":27,"textLines":1,"bbox":[72,88,1050,72]}
+{"kind":"textbox","id":"sh/ihs7q9cz","slide":24,"text":"Stock needs both a current answer and a past trail","textPreview":"Stock needs both a current answer and a past trail","textChars":50,"textLines":1,"bbox":[74,170,900,42]}
+{"kind":"shape","id":"sh/to3qpobm","slide":24,"bbox":[72,226,1136,0]}
+{"kind":"shape","id":"sh/snapwja1","slide":24,"bbox":[72,294,500,252]}
+{"kind":"textbox","id":"sh/rm18netg","slide":24,"text":"CURRENT VIEW","textPreview":"CURRENT VIEW","textChars":12,"textLines":1,"bbox":[108,330,200,18]}
+{"kind":"textbox","id":"sh/6ls7u9sv","slide":24,"text":"What is available now","textPreview":"What is available now","textChars":21,"textLines":1,"bbox":[108,372,330,32]}
+{"kind":"textbox","id":"sh/9szqd4bi","slide":24,"text":"Variant-level visibility\nLow-stock awareness","textPreview":"Variant-level visibility | Low-stock awareness","textChars":44,"textLines":2,"bbox":[108,432,300,56]}
+{"kind":"shape","id":"sh/8rqpkzux","slide":24,"bbox":[640,294,520,252]}
+{"kind":"textbox","id":"sh/6tkje54r","slide":24,"text":"HISTORY","textPreview":"HISTORY","textChars":7,"textLines":1,"bbox":[676,330,200,18]}
+{"kind":"textbox","id":"sh/rutk7alc","slide":24,"text":"What changed and when","textPreview":"What changed and when","textChars":21,"textLines":1,"bbox":[676,372,370,32]}
+{"kind":"textbox","id":"sh/sv21gfmx","slide":24,"text":"Stock events become traceable work.","textPreview":"Stock events become traceable work.","textChars":35,"textLines":1,"bbox":[676,432,360,30]}
+{"kind":"textbox","id":"sh/twb29k3i","slide":24,"text":"LENSIFY / PROJECT WALKTHROUGH","textPreview":"LENSIFY / PROJECT WALKTHROUGH","textChars":29,"textLines":1,"bbox":[72,676,420,18]}
+{"kind":"textbox","id":"sh/ehkjip43","slide":24,"text":"24","textPreview":"24","textChars":2,"textLines":1,"bbox":[1180,676,28,18]}
+{"kind":"notes","id":"nt/ditd10","slide":24,"text":"Inventory is easier to trust when the current state and the change history live together. The admin user can see availability and investigate how it moved."}
+{"kind":"slide","id":"sl/ktq4x2","slide":25,"title":"23 / FULFILMENT","textShapes":10}
+{"kind":"textbox","id":"sh/mxgf2pov","slide":25,"text":"23 / FULFILMENT","textPreview":"23 / FULFILMENT","textChars":15,"textLines":1,"bbox":[72,52,500,20]}
+{"kind":"textbox","id":"sh/90ryx4nm","slide":25,"text":"Orders and returns operations","textPreview":"Orders and returns operations","textChars":29,"textLines":1,"bbox":[72,88,1050,72]}
+{"kind":"textbox","id":"sh/ozix4z61","slide":25,"text":"Order status becomes a shared language between customer and admin","textPreview":"Order status becomes a shared language between customer and admin","textChars":65,"textLines":1,"bbox":[74,170,900,42]}
+{"kind":"shape","id":"sh/zupwrup4","slide":25,"bbox":[72,226,1136,0]}
+{"kind":"shape","id":"sh/etgfypoj","slide":25,"bbox":[82,330,208,78]}
+{"kind":"textbox","id":"sh/1w7yt47a","slide":25,"text":"New order","textPreview":"New order","textChars":9,"textLines":1,"bbox":[102,356,166,24]}
+{"kind":"shape","id":"sh/0vyx0z6p","slide":25,"bbox":[290,369,68,0]}
+{"kind":"shape","id":"sh/r6pwnap8","slide":25,"bbox":[358,330,208,78]}
+{"kind":"textbox","id":"sh/q5wfu5on","slide":25,"text":"Processing","textPreview":"Processing","textChars":10,"textLines":1,"bbox":[378,356,166,24]}
+{"kind":"shape","id":"sh/8j2lo7eh","slide":25,"bbox":[566,369,68,0]}
+{"kind":"shape","id":"sh/9kv2xcf2","slide":25,"bbox":[634,330,208,78]}
+{"kind":"textbox","id":"sh/mhkjmxwr","slide":25,"text":"Shipped","textPreview":"Shipped","textChars":7,"textLines":1,"bbox":[654,356,166,24]}
+{"kind":"shape","id":"sh/nitkv2xw","slide":25,"bbox":[842,369,68,0]}
+{"kind":"shape","id":"sh/0f21knel","slide":25,"bbox":[910,330,208,78]}
+{"kind":"textbox","id":"sh/lgb2tsf6","slide":25,"text":"Return review","textPreview":"Return review","textChars":13,"textLines":1,"bbox":[930,356,166,24]}
+{"kind":"textbox","id":"sh/ydkjixwf","slide":25,"text":"The state machine gives every handoff a visible place.","textPreview":"The state machine gives every handoff a visible place.","textChars":54,"textLines":1,"bbox":[82,500,780,36]}
+{"kind":"textbox","id":"sh/zetkr2x0","slide":25,"text":"LENSIFY / PROJECT WALKTHROUGH","textPreview":"LENSIFY / PROJECT WALKTHROUGH","textChars":29,"textLines":1,"bbox":[72,676,420,18]}
+{"kind":"textbox","id":"sh/kbmlwrep","slide":25,"text":"25","textPreview":"25","textChars":2,"textLines":1,"bbox":[1180,676,28,18]}
+{"kind":"notes","id":"nt/ktq4x2","slide":25,"text":"The operations flow turns ambiguous follow-up into named states. That helps the customer see progress and gives the operator a clear next action."}
+{"kind":"slide","id":"sl/ilr58l","slide":26,"title":"24 / MODERATION","textShapes":11}
+{"kind":"textbox","id":"sh/2xcf6xwb","slide":26,"text":"24 / MODERATION","textPreview":"24 / MODERATION","textChars":15,"textLines":1,"bbox":[72,52,500,20]}
+{"kind":"textbox","id":"sh/pknyhsv2","slide":26,"text":"Reviews, messages and notifications","textPreview":"Reviews, messages and notifications","textChars":35,"textLines":1,"bbox":[72,88,1050,72]}
+{"kind":"textbox","id":"sh/ojex87eh","slide":26,"text":"Signals from customers should become organised work","textPreview":"Signals from customers should become organised work","textChars":51,"textLines":1,"bbox":[74,170,900,42]}
+{"kind":"shape","id":"sh/fulgbidk","slide":26,"bbox":[72,226,1136,0]}
+{"kind":"shape","id":"sh/etcf2dwf","slide":26,"bbox":[72,300,320,170]}
+{"kind":"textbox","id":"sh/1w3ydsvq","slide":26,"text":"INBOX","textPreview":"INBOX","textChars":5,"textLines":1,"bbox":[106,332,120,18]}
+{"kind":"textbox","id":"sh/0vux4ne5","slide":26,"text":"Reviews\nMessages","textPreview":"Reviews | Messages","textChars":16,"textLines":2,"bbox":[106,374,200,74]}
+{"kind":"shape","id":"sh/zqpgnmd4","slide":26,"bbox":[480,300,320,170]}
+{"kind":"textbox","id":"sh/ypgfehcj","slide":26,"text":"DECISION","textPreview":"DECISION","textChars":8,"textLines":1,"bbox":[514,332,140,18]}
+{"kind":"textbox","id":"sh/cfy9wzml","slide":26,"text":"Moderate\nRespond","textPreview":"Moderate | Respond","textChars":16,"textLines":2,"bbox":[514,374,220,74]}
+{"kind":"shape","id":"sh/d07ap4n6","slide":26,"bbox":[888,300,272,170]}
+{"kind":"textbox","id":"sh/qdgrup4f","slide":26,"text":"OUTCOME","textPreview":"OUTCOME","textChars":7,"textLines":1,"bbox":[922,332,140,18]}
+{"kind":"textbox","id":"sh/bep8nu50","slide":26,"text":"Notify\nRecord","textPreview":"Notify | Record","textChars":13,"textLines":2,"bbox":[922,374,200,74]}
+{"kind":"textbox","id":"sh/obe9szm9","slide":26,"text":"LENSIFY / PROJECT WALKTHROUGH","textPreview":"LENSIFY / PROJECT WALKTHROUGH","textChars":29,"textLines":1,"bbox":[72,676,420,18]}
+{"kind":"textbox","id":"sh/pcnqlknu","slide":26,"text":"26","textPreview":"26","textChars":2,"textLines":1,"bbox":[1180,676,28,18]}
+{"kind":"notes","id":"nt/ilr58l","slide":26,"text":"The admin console treats reviews and messages as operational inputs. Moderation, response and notification form a small but complete loop."}
+{"kind":"slide","id":"sl/hkfkka","slide":27,"title":"25 / MERCHANDISING","textShapes":8}
+{"kind":"textbox","id":"sh/0zadgna9","slide":27,"text":"25 / MERCHANDISING","textPreview":"25 / MERCHANDISING","textChars":18,"textLines":1,"bbox":[72,52,500,20]}
+{"kind":"textbox","id":"sh/zy1c7i9o","slide":27,"text":"Banners and coupons","textPreview":"Banners and coupons","textChars":19,"textLines":1,"bbox":[72,88,1050,72]}
+{"kind":"textbox","id":"sh/exsbedsj","slide":27,"text":"The operator can shape the storefront without touching page code","textPreview":"The operator can shape the storefront without touching page code","textChars":64,"textLines":1,"bbox":[74,170,900,42]}
+{"kind":"shape","id":"sh/9o3udsr6","slide":27,"bbox":[72,226,1136,0]}
+{"kind":"shape","id":"sh/nmlcbi90","slide":27,"bbox":[552,286,608,260]}
+{"kind":"textbox","id":"sh/mlsvid8f","slide":27,"text":"MERCHANDISING CONTROLS","textPreview":"MERCHANDISING CONTROLS","textChars":22,"textLines":1,"bbox":[592,326,300,18]}
+{"kind":"textbox","id":"sh/pszu1orm","slide":27,"text":"Campaign banners\nCoupon rules\nHomepage emphasis","textPreview":"Campaign banners | Coupon rules | Homepage emphasis","textChars":47,"textLines":3,"bbox":[592,374,360,112]}
+{"kind":"shape","id":"sh/4rqt83a1","slide":27,"bbox":[592,496,150,30]}
+{"kind":"textbox","id":"sh/qhszutgr","slide":27,"text":"CONTENT CONTROL","textPreview":"CONTENT CONTROL","textChars":15,"textLines":1,"bbox":[604,503,126,14]}
+{"kind":"textbox","id":"sh/ri1gnyhc","slide":27,"text":"LENSIFY / PROJECT WALKTHROUGH","textPreview":"LENSIFY / PROJECT WALKTHROUGH","textChars":29,"textLines":1,"bbox":[72,676,420,18]}
+{"kind":"textbox","id":"sh/cjahw3yx","slide":27,"text":"27","textPreview":"27","textChars":2,"textLines":1,"bbox":[1180,676,28,18]}
+{"kind":"image","id":"im/1orudoj6","slide":27,"name":"","geometry":"roundRect","alt":"Campaign banner","bbox":[72,286,420,260]}
+{"kind":"notes","id":"nt/hkfkka","slide":27,"text":"Banners and coupons are the bridge between the static catalogue and changing campaigns. They let the operator update emphasis without changing the underlying route structure."}
+{"kind":"slide","id":"sl/tzzjqx","slide":28,"title":"26 / INSIGHT","textShapes":11}
+{"kind":"textbox","id":"sh/ve1knex8","slide":28,"text":"26 / INSIGHT","textPreview":"26 / INSIGHT","textChars":12,"textLines":1,"bbox":[72,52,500,20]}
+{"kind":"textbox","id":"sh/gfa1wjet","slide":28,"text":"Reports, customers and activity logs","textPreview":"Reports, customers and activity logs","textChars":36,"textLines":1,"bbox":[72,88,1050,72]}
+{"kind":"textbox","id":"sh/hgj2pofe","slide":28,"text":"Visibility becomes useful when it also leaves a trail","textPreview":"Visibility becomes useful when it also leaves a trail","textChars":53,"textLines":1,"bbox":[74,170,900,42]}
+{"kind":"shape","id":"sh/ihs3y9wz","slide":28,"bbox":[72,226,1136,0]}
+{"kind":"shape","id":"sh/3ilkrexk","slide":28,"bbox":[72,290,320,240]}
+{"kind":"textbox","id":"sh/43ul0jep","slide":28,"text":"REPORTS","textPreview":"REPORTS","textChars":7,"textLines":1,"bbox":[108,330,160,20]}
+{"kind":"textbox","id":"sh/5432tofa","slide":28,"text":"Business view\nfor decisions","textPreview":"Business view | for decisions","textChars":27,"textLines":2,"bbox":[108,378,220,74]}
+{"kind":"shape","id":"sh/q5c32twv","slide":28,"bbox":[480,290,320,240]}
+{"kind":"textbox","id":"sh/r6lkvyxg","slide":28,"text":"CUSTOMERS","textPreview":"CUSTOMERS","textChars":9,"textLines":1,"bbox":[516,330,180,20]}
+{"kind":"textbox","id":"sh/bix8zuxc","slide":28,"text":"Records\nwith context","textPreview":"Records | with context","textChars":20,"textLines":2,"bbox":[516,378,220,74]}
+{"kind":"shape","id":"sh/qho7qpgr","slide":28,"bbox":[888,290,272,240]}
+{"kind":"textbox","id":"sh/dkzq14fi","slide":28,"text":"LOGS","textPreview":"LOGS","textChars":4,"textLines":1,"bbox":[924,330,160,20]}
+{"kind":"textbox","id":"sh/cjqpszyx","slide":28,"text":"Accountability\nby event","textPreview":"Accountability | by event","textChars":23,"textLines":2,"bbox":[924,378,200,74]}
+{"kind":"textbox","id":"sh/3exovux0","slide":28,"text":"LENSIFY / PROJECT WALKTHROUGH","textPreview":"LENSIFY / PROJECT WALKTHROUGH","textChars":29,"textLines":1,"bbox":[72,676,420,18]}
+{"kind":"textbox","id":"sh/2do7mpgv","slide":28,"text":"28","textPreview":"28","textChars":2,"textLines":1,"bbox":[1180,676,28,18]}
+{"kind":"notes","id":"nt/tzzjqx","slide":28,"text":"Reports support the business view, customer records hold context, and activity logs help explain what happened. Together they move the admin experience beyond CRUD."}
+{"kind":"slide","id":"sl/vp0ogl","slide":29,"title":"27 / RESPONSIVE UX","textShapes":9}
+{"kind":"textbox","id":"sh/itkfmx4r","slide":29,"text":"27 / RESPONSIVE UX","textPreview":"27 / RESPONSIVE UX","textChars":18,"textLines":1,"bbox":[72,52,500,20]}
+{"kind":"textbox","id":"sh/5wbyhc3i","slide":29,"text":"Responsive by default","textPreview":"Responsive by default","textChars":21,"textLines":1,"bbox":[72,88,1050,72]}
+{"kind":"textbox","id":"sh/4v2xo7mx","slide":29,"text":"The same story should feel credible on every screen","textPreview":"The same story should feel credible on every screen","textChars":51,"textLines":1,"bbox":[74,170,900,42]}
+{"kind":"shape","id":"sh/vq9gb25g","slide":29,"bbox":[72,226,1136,0]}
+{"kind":"shape","id":"sh/up0fix4v","slide":29,"bbox":[72,296,330,220]}
+{"kind":"textbox","id":"sh/hsbydsn6","slide":29,"text":"Desktop","textPreview":"Desktop","textChars":7,"textLines":1,"bbox":[90,534,300,22]}
+{"kind":"shape","id":"sh/grixknml","slide":29,"bbox":[462,326,250,170]}
+{"kind":"textbox","id":"sh/fmdgnmlk","slide":29,"text":"Tablet","textPreview":"Tablet","textChars":6,"textLines":1,"bbox":[480,514,220,22]}
+{"kind":"shape","id":"sh/el4fuh4z","slide":29,"bbox":[790,344,150,270]}
+{"kind":"textbox","id":"sh/gv6dgzu9","slide":29,"text":"Mobile","textPreview":"Mobile","textChars":6,"textLines":1,"bbox":[808,632,120,22]}
+{"kind":"textbox","id":"sh/hwfe94vu","slide":29,"text":"Layout, navigation and touch targets adapt without changing the product model.","textPreview":"Layout, navigation and touch targets adapt without changing the product model.","textChars":78,"textLines":1,"bbox":[72,600,900,30]}
+{"kind":"textbox","id":"sh/utove9c3","slide":29,"text":"LENSIFY / PROJECT WALKTHROUGH","textPreview":"LENSIFY / PROJECT WALKTHROUGH","textChars":29,"textLines":1,"bbox":[72,676,420,18]}
+{"kind":"textbox","id":"sh/fuxw7udo","slide":29,"text":"29","textPreview":"29","textChars":2,"textLines":1,"bbox":[1180,676,28,18]}
+{"kind":"notes","id":"nt/vp0ogl","slide":29,"text":"Responsive behavior is part of the product design, not a final polish step. The customer journey remains intact as layout, navigation and touch targets adapt."}
+{"kind":"slide","id":"sl/4tfyoh","slide":30,"title":"28 / TECHNICAL","textShapes":16}
+{"kind":"textbox","id":"sh/kzu9k7yp","slide":30,"text":"28 / TECHNICAL","textPreview":"28 / TECHNICAL","textChars":14,"textLines":1,"bbox":[72,52,500,20]}
+{"kind":"textbox","id":"sh/zylsr2xk","slide":30,"text":"Technical architecture","textPreview":"Technical architecture","textChars":22,"textLines":1,"bbox":[72,88,1050,72]}
+{"kind":"textbox","id":"sh/yxcrixgz","slide":30,"text":"A small, explicit stack keeps the project easy to understand","textPreview":"A small, explicit stack keeps the project easy to understand","textChars":60,"textLines":1,"bbox":[74,170,900,42]}
+{"kind":"shape","id":"sh/94naxcfm","slide":30,"bbox":[72,226,1136,0]}
+{"kind":"shape","id":"sh/83e9o7y1","slide":30,"bbox":[72,276,580,54]}
+{"kind":"textbox","id":"sh/725svmxg","slide":30,"text":"UI routes","textPreview":"UI routes","textChars":9,"textLines":1,"bbox":[98,292,190,20]}
+{"kind":"textbox","id":"sh/m1crmhgv","slide":30,"text":"PHP pages + Tailwind CDN","textPreview":"PHP pages + Tailwind CDN","textChars":24,"textLines":1,"bbox":[310,292,300,20]}
+{"kind":"shape","id":"sh/hsna1wfi","slide":30,"bbox":[72,352,580,54]}
+{"kind":"textbox","id":"sh/w7e9sryx","slide":30,"text":"Application core","textPreview":"Application core","textChars":16,"textLines":1,"bbox":[98,368,190,20]}
+{"kind":"textbox","id":"sh/298vydcj","slide":30,"text":"bootstrap, sessions, helpers","textPreview":"bootstrap, sessions, helpers","textChars":28,"textLines":1,"bbox":[310,368,300,20]}
+{"kind":"shape","id":"sh/3ahwrit4","slide":30,"bbox":[72,428,580,54]}
+{"kind":"textbox","id":"sh/obqd0nup","slide":30,"text":"Data layer","textPreview":"Data layer","textChars":10,"textLines":1,"bbox":[98,444,190,20]}
+{"kind":"textbox","id":"sh/pczetsba","slide":30,"text":"MySQL / MariaDB schema","textPreview":"MySQL / MariaDB schema","textChars":22,"textLines":1,"bbox":[310,444,300,20]}
+{"kind":"shape","id":"sh/ad8v2dcv","slide":30,"bbox":[72,504,580,54]}
+{"kind":"textbox","id":"sh/behwvit0","slide":30,"text":"Assets","textPreview":"Assets","textChars":6,"textLines":1,"bbox":[98,520,190,20]}
+{"kind":"textbox","id":"sh/cfqd4nul","slide":30,"text":"uploads, product media, banners","textPreview":"uploads, product media, banners","textChars":31,"textLines":1,"bbox":[310,520,300,20]}
+{"kind":"shape","id":"sh/xgjexsb6","slide":30,"bbox":[770,276,390,282]}
+{"kind":"textbox","id":"sh/6hovqtcb","slide":30,"text":"Request","textPreview":"Request","textChars":7,"textLines":1,"bbox":[814,322,200,24]}
+{"kind":"textbox","id":"sh/rixwjytw","slide":30,"text":"↓","textPreview":"↓","textChars":1,"textLines":1,"bbox":[812,356,40,30]}
+{"kind":"textbox","id":"sh/vmtsru9o","slide":30,"text":"Route → bootstrap → database\n\nResponse → template → browser","textPreview":"Route → bootstrap → database |  | Response → template → browser","textChars":59,"textLines":3,"bbox":[814,394,280,100]}
+{"kind":"textbox","id":"sh/ulkbyps3","slide":30,"text":"LENSIFY / PROJECT WALKTHROUGH","textPreview":"LENSIFY / PROJECT WALKTHROUGH","textChars":29,"textLines":1,"bbox":[72,676,420,18]}
+{"kind":"textbox","id":"sh/hobat4ru","slide":30,"text":"30","textPreview":"30","textChars":2,"textLines":1,"bbox":[1180,676,28,18]}
+{"kind":"notes","id":"nt/4tfyoh","slide":30,"text":"The architecture is deliberately understandable. Routes handle the page, the bootstrap centralises shared behavior, the database stores the model, and assets stay separate from application logic."}
+{"kind":"slide","id":"sl/29tooo","slide":31,"title":"29 / TRUST","textShapes":17}
+{"kind":"textbox","id":"sh/cj61sn2p","slide":31,"text":"29 / TRUST","textPreview":"29 / TRUST","textChars":10,"textLines":1,"bbox":[72,52,500,20]}
+{"kind":"textbox","id":"sh/rixkz214","slide":31,"text":"Security and data handling","textPreview":"Security and data handling","textChars":26,"textLines":1,"bbox":[72,88,1050,72]}
+{"kind":"textbox","id":"sh/qhojqxkj","slide":31,"text":"Practical safeguards keep a small application dependable","textPreview":"Practical safeguards keep a small application dependable","textChars":56,"textLines":1,"bbox":[74,170,900,42]}
+{"kind":"shape","id":"sh/pgfixs3y","slide":31,"bbox":[72,226,1136,0]}
+{"kind":"shape","id":"sh/4f61on2d","slide":31,"bbox":[72,290,300,84]}
+{"kind":"textbox","id":"sh/3ex0vils","slide":31,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[92,308,34,20]}
+{"kind":"textbox","id":"sh/2dojmdk7","slide":31,"text":"Session isolation","textPreview":"Session isolation","textChars":17,"textLines":1,"bbox":[140,308,210,42]}
+{"kind":"shape","id":"sh/hcvit83m","slide":31,"bbox":[432,290,300,84]}
+{"kind":"textbox","id":"sh/gbm1k32h","slide":31,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[452,308,34,20]}
+{"kind":"textbox","id":"sh/upsjq1wz","slide":31,"text":"Role checks","textPreview":"Role checks","textChars":11,"textLines":1,"bbox":[500,308,210,42]}
+{"kind":"shape","id":"sh/fq1kj6dk","slide":31,"bbox":[792,290,300,84]}
+{"kind":"textbox","id":"sh/gra1sbep","slide":31,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[812,308,34,20]}
+{"kind":"textbox","id":"sh/hsj2lgva","slide":31,"text":"Prepared queries","textPreview":"Prepared queries","textChars":16,"textLines":1,"bbox":[860,308,210,42]}
+{"kind":"shape","id":"sh/6lsjmhwn","slide":31,"bbox":[72,408,300,84]}
+{"kind":"textbox","id":"sh/7m10fmd8","slide":31,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[92,426,34,20]}
+{"kind":"textbox","id":"sh/sna1oret","slide":31,"text":"Upload validation","textPreview":"Upload validation","textChars":17,"textLines":1,"bbox":[140,426,210,42]}
+{"kind":"shape","id":"sh/tojihwve","slide":31,"bbox":[432,408,300,84]}
+{"kind":"textbox","id":"sh/ix8jihwr","slide":31,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[452,426,34,20]}
+{"kind":"textbox","id":"sh/jih0bmdc","slide":31,"text":"Admin activity logs","textPreview":"Admin activity logs","textChars":19,"textLines":1,"bbox":[500,426,210,42]}
+{"kind":"shape","id":"sh/n2xgjit4","slide":31,"bbox":[792,408,300,84]}
+{"kind":"textbox","id":"sh/m14fqdcj","slide":31,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[812,426,34,20]}
+{"kind":"textbox","id":"sh/9ofylsbu","slide":31,"text":"Environment overrides","textPreview":"Environment overrides","textChars":21,"textLines":1,"bbox":[860,426,210,42]}
+{"kind":"textbox","id":"sh/836hsnup","slide":31,"text":"LENSIFY / PROJECT WALKTHROUGH","textPreview":"LENSIFY / PROJECT WALKTHROUGH","textChars":29,"textLines":1,"bbox":[72,676,420,18]}
+{"kind":"textbox","id":"sh/vqxgnit0","slide":31,"text":"31","textPreview":"31","textChars":2,"textLines":1,"bbox":[1180,676,28,18]}
+{"kind":"notes","id":"nt/29tooo","slide":31,"text":"The safeguards shown here are grounded in the project structure: session handling, admin gates, prepared database statements, upload helpers, logging and local configuration overrides."}
+{"kind":"slide","id":"sl/8qd493","slide":32,"title":"30 / ROADMAP","textShapes":11}
+{"kind":"textbox","id":"sh/jqh0zmpw","slide":32,"text":"30 / ROADMAP","textPreview":"30 / ROADMAP","textChars":12,"textLines":1,"bbox":[72,52,500,20]}
+{"kind":"textbox","id":"sh/4rq1sr6h","slide":32,"text":"Implementation status and roadmap","textPreview":"Implementation status and roadmap","textChars":33,"textLines":1,"bbox":[72,88,1050,72]}
+{"kind":"textbox","id":"sh/5sji1w72","slide":32,"text":"The current build is clear about what is ready and what needs production hardening","textPreview":"The current build is clear about what is ready and what needs production hardening","textChars":82,"textLines":1,"bbox":[74,170,900,42]}
+{"kind":"shape","id":"sh/6tsjuhon","slide":32,"bbox":[72,226,1136,0]}
+{"kind":"shape","id":"sh/ru1k3mp8","slide":32,"bbox":[72,292,318,250]}
+{"kind":"textbox","id":"sh/sva1wr6t","slide":32,"text":"NOW","textPreview":"NOW","textChars":3,"textLines":1,"bbox":[96,324,120,20]}
+{"kind":"textbox","id":"sh/twj25w7e","slide":32,"text":"Core storefront\nCustomer account\nAdmin console","textPreview":"Core storefront | Customer account | Admin console","textChars":46,"textLines":3,"bbox":[96,370,260,120]}
+{"kind":"shape","id":"sh/ehsjy1oj","slide":32,"bbox":[438,292,318,250]}
+{"kind":"textbox","id":"sh/fi1k76p4","slide":32,"text":"NEXT","textPreview":"NEXT","textChars":4,"textLines":1,"bbox":[462,324,120,20]}
+{"kind":"textbox","id":"sh/nihkbeh4","slide":32,"text":"Real payment gateway\nWebhook verification\nOwned product photography","textPreview":"Real payment gateway | Webhook verification | Owned product photography","textChars":67,"textLines":3,"bbox":[462,370,260,120]}
+{"kind":"shape","id":"sh/mh8ji90z","slide":32,"bbox":[804,292,318,250]}
+{"kind":"textbox","id":"sh/94j2doza","slide":32,"text":"LATER","textPreview":"LATER","textChars":5,"textLines":1,"bbox":[828,324,120,20]}
+{"kind":"textbox","id":"sh/ojq1kjip","slide":32,"text":"Deployment hardening\nApproved legal copy\nOperational monitoring","textPreview":"Deployment hardening | Approved legal copy | Operational monitoring","textChars":63,"textLines":3,"bbox":[828,370,260,120]}
+{"kind":"textbox","id":"sh/zehk7uh8","slide":32,"text":"LENSIFY / PROJECT WALKTHROUGH","textPreview":"LENSIFY / PROJECT WALKTHROUGH","textChars":29,"textLines":1,"bbox":[72,676,420,18]}
+{"kind":"textbox","id":"sh/ed8jep0n","slide":32,"text":"32","textPreview":"32","textChars":2,"textLines":1,"bbox":[1180,676,28,18]}
+{"kind":"notes","id":"nt/8qd493","slide":32,"text":"The roadmap separates finished project scope from production work. The README also calls out payment gateway integration, owned imagery, legal copy and deployment hardening as future responsibilities."}
+{"kind":"slide","id":"sl/zj7vux","slide":33,"title":"LENSIFY","textShapes":6}
+{"kind":"shape","id":"sh/x8fexcfy","slide":33,"bbox":[0,0,820,720]}
+{"kind":"textbox","id":"sh/wn6d47et","slide":33,"text":"LENSIFY","textPreview":"LENSIFY","textChars":7,"textLines":1,"bbox":[72,72,260,24]}
+{"kind":"textbox","id":"sh/jaxwzmx4","slide":33,"text":"A complete\nproduct story.","textPreview":"A complete | product story.","textChars":25,"textLines":2,"bbox":[72,188,580,150]}
+{"kind":"textbox","id":"sh/i9of6hwj","slide":33,"text":"From discovery to fulfilment, the project connects interface, data and operations into one explainable system.","textPreview":"From discovery to fulfilment, the project connects interface, data and operations into one explainable system.","textChars":110,"textLines":1,"bbox":[76,390,560,76]}
+{"kind":"textbox","id":"sh/5cfe1wfa","slide":33,"text":"Thank you  /  Questions","textPreview":"Thank you  /  Questions","textChars":23,"textLines":1,"bbox":[76,554,360,28]}
+{"kind":"textbox","id":"sh/kb6x8rep","slide":33,"text":"LENSIFY / END","textPreview":"LENSIFY / END","textChars":13,"textLines":1,"bbox":[72,676,420,18]}
+{"kind":"textbox","id":"sh/zedwn2x0","slide":33,"text":"33","textPreview":"33","textChars":2,"textLines":1,"bbox":[1180,676,28,18]}
+{"kind":"image","id":"im/jm903m18","slide":33,"name":"","alt":"Lensify closing visual","bbox":[760,0,520,720]}
+{"kind":"notes","id":"nt/zj7vux","slide":33,"text":"Close on the three ideas: a clear customer journey, an operational admin system and an architecture that remains understandable. Invite questions around the live demo, implementation choices and roadmap."}

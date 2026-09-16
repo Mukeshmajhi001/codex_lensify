@@ -16,9 +16,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'login
         if ($user && password_verify($password, $user['password_hash'])) {
             session_regenerate_id(true);
             $_SESSION['user_id'] = $user['id'];
-            merge_guest_wishlist((int) $user['id']);
+            merge_guest_data((int) $user['id']);
             db()->prepare('INSERT INTO user_login_logs (user_id, ip_address, user_agent) VALUES (?, ?, ?)')->execute([$user['id'], $_SERVER['REMOTE_ADDR'] ?? null, substr((string) ($_SERVER['HTTP_USER_AGENT'] ?? ''), 0, 255)]);
-            flash('success', 'Welcome back, ' . $user['first_name'] . '.');
+            flash('success', 'Welcome back, ' . $user['first_name'] . '. Your bag and saved frames are ready.');
             redirect($user['role'] === 'admin' ? 'admin/index.php' : 'index.php');
         }
         flash('error', 'Incorrect email or password.');

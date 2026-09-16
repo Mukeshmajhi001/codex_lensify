@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'regis
     } else {
         try {
             $statement = db()->prepare('INSERT INTO users (first_name, last_name, email, password_hash) VALUES (?, ?, ?, ?)');
-            $statement->execute([$first, $last, $email, password_hash($password, PASSWORD_DEFAULT)]);
+             $statement->execute([$first, $last, $email, password_hash($password, PASSWORD_DEFAULT)]);
             $userId = (int) db()->lastInsertId();
             $upload = upload_image('profile_image');
             if ($upload['error']) {
@@ -26,8 +26,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'regis
             }
             session_regenerate_id(true);
             $_SESSION['user_id'] = $userId;
-            merge_guest_wishlist($userId);
-            flash('success', 'Your Lensify account is ready. Your saved frames have been kept.');
+            merge_guest_data($userId);
+            flash('success', 'Your Lensify account is ready. Your bag and saved frames have been kept.');
             redirect('account.php');
         } catch (PDOException) {
             flash('error', 'An account with this email already exists.');
